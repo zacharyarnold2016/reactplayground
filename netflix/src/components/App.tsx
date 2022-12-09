@@ -1,27 +1,17 @@
 import React from "react";
 import TopBar from "./top/TopBar";
 import VideoBar from "./main/VideoBar";
-import Button from "./util/Button";
-import { ButtonStyle, ButtonType } from "../interfaces/Button.interface";
-import ErrorBoundary from "./err/ErrorBoundary";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./err/ErrorFallback";
 
 const App: React.FC = () => {
-  const err = () => {
-    throw new Error("Error Boundary Works");
-  };
   return (
-    <ErrorBoundary>
-      <div className="app">
+    <div className="app">
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
         <TopBar />
         <VideoBar />
-        <Button
-          style={ButtonStyle.A}
-          purpose={ButtonType.BUTTON}
-          text="SelfDestructText"
-          callback={err}
-        />
-      </div>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </div>
   );
 };
 

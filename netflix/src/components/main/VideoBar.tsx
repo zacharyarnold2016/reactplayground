@@ -2,6 +2,7 @@ import React from "react";
 import Film from "./Film";
 import SortBar from "./SortBar";
 import ContextMenu from "./ContextMenu";
+import Result from "./Results";
 
 const films = [
   {
@@ -22,18 +23,13 @@ const films = [
     genre: "Action",
     year: 2005,
   },
-  {
-    img: "https://picsum.photos/400/400",
-    name: "Okay I guess",
-    genre: "Action",
-    year: 2005,
-  },
 ];
 
 const VideoBar = () => {
   return (
     <div className="mainContainer">
       <SortBar />
+      <Result />
       <div className="filmsContainer">
         {films.map((element) => {
           return (
