@@ -1,0 +1,177 @@
+:root {
+  --bg-color: #424242;
+  --text-color: #ffffff;
+  --accent-color: #f65261;
+  --trim-color: #555555;
+  --extra-color: #232323;
+}
+
+/* Core Types */
+body {
+  font-family: "Noto Sans", sans-serif;
+
+  font-family: "Source Sans Pro", sans-serif;
+}
+h1 {
+  margin: 0px 10px;
+}
+
+/* Base */
+.app {
+  background-color: var(--bg-color);
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  color: var(--text-color);
+  justify-items: center;
+}
+.logo {
+  position: absolute;
+  color: var(--accent-color);
+  top: 1vh;
+  left: 1vh;
+}
+
+/* Core Container */
+.mainContainer {
+  background: var(--extra-color);
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding: 1vh;
+  text-align: center;
+  justify-content: center;
+}
+
+.filmsContainer {
+  background: var(--extra-color);
+  display: grid;
+  margin: 4px;
+  width: 95%;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.film {
+  margin: 2vh;
+  height: 10%;
+  width: fit-content;
+  padding: 5px;
+  justify-items: center;
+  align-self: center;
+  position: relative;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 50px 450px;
+}
+.sect {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/* Sort */
+
+.genreBar {
+  display: flex;
+  justify-content: left;
+  grid-column: span 2;
+  color: var(--text-color);
+}
+.sortBar {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  border-bottom: 5px solid white;
+  padding: 10px;
+  margin: 1rem;
+}
+.sortBy {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/* Buttons */
+.primaryButton {
+  background-color: var(--accent-color);
+  margin-left: 5px;
+  height: 4vh;
+  width: 10%;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  top: 4.5vh;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+.primaryButton:hover {
+  color: var(--text-color);
+  border: 1px;
+  border-color: var(--text-color);
+}
+
+.secondaryButton {
+  background-color: var(--extra-color);
+
+  color: var(--text-color);
+  margin-left: 5px;
+  height: 6vh;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  top: 2vh;
+}
+
+/* Top Container */
+.searchContainer {
+  background-image: url("https://i.picsum.photos/id/681/5000/2951.jpg?hmac=01BxiMvFITUx4h3xM_x0IUp2w5KyQHzUd1AVxm8FKG0");
+  height: 15%;
+  width: 100%;
+  padding: 5vh;
+  padding-top: 7vh;
+  border: 4vh;
+  font-size: 2vh;
+  display: inline-flex;
+  position: relative;
+  object-fit: cover;
+  background-size: cover;
+}
+
+/* Search Bar Contents */
+.searchBar {
+  background: var(--extra-color);
+  height: 2vh;
+  width: 60%;
+  border-radius: 5px;
+  opacity: 85%;
+  padding: 1vh;
+  text-align: left;
+  position: relative;
+  top: 2vh;
+  color: var(--text-color);
+  box-shadow: inset 0 0 5px var(--text-color);
+}
+
+.addMovie {
+  position: absolute;
+  top: 1vh;
+  right: 15vh;
+}
+
+.context {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100px;
+  z-index: 100;
+  background-color: black;
+}
