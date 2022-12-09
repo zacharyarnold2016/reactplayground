@@ -1,10 +1,10 @@
 import React from "react";
+import { AiOutlineDownCircle } from "react-icons/ai";
 
+const click = () => {
+  console.log("Click!");
+};
 const ContextMenu = () => {
-  return (
-    <div>
-      <button className="context">...</button>
-    </div>
-  );
+  return <AiOutlineDownCircle className="context" onClick={click} />;
 };
 export default ContextMenu;

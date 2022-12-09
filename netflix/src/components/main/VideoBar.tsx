@@ -26,6 +26,20 @@ const films = [
     year: 2005,
     key: 3,
   },
+  {
+    img: "https://picsum.photos/400/400",
+    name: "Is",
+    genre: "Action",
+    year: 2005,
+    key: 5,
+  },
+  {
+    img: "https://picsum.photos/400/400",
+    name: "Is",
+    genre: "Action",
+    year: 2005,
+    key: 6,
+  },
 ];
 
 const VideoBar = () => {
@@ -33,10 +47,10 @@ const VideoBar = () => {
     <div className="mainContainer">
       <SortBar />
       <Result />
-      <div className="filmsContainer">
-        {films.map((element) => {
-          return (
-            <ul>
+      <ul>
+        <div className="filmsContainer">
+          {films.map((element) => {
+            return (
               <div className="film">
                 <li key={element.key}>
                   <ContextMenu />
@@ -49,10 +63,10 @@ const VideoBar = () => {
                   />
                 </li>
               </div>
-            </ul>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </ul>
     </div>
   );
 };
