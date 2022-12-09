@@ -10,18 +10,21 @@ const films = [
     name: "Pulp",
     genre: "Action",
     year: 2005,
+    key: 1,
   },
   {
     img: "https://picsum.photos/400/400",
     name: "Fiction",
     genre: "Action",
     year: 2005,
+    key: 2,
   },
   {
     img: "https://picsum.photos/400/400",
     name: "Is",
     genre: "Action",
     year: 2005,
+    key: 3,
   },
 ];
 
@@ -35,9 +38,10 @@ const VideoBar = () => {
           return (
             <ul>
               <div className="film">
-                <li key={element.name}>
+                <li key={element.key}>
                   <ContextMenu />
                   <Film
+                    key={element.key}
                     img={element.img}
                     name={element.name}
                     genre={element.genre}

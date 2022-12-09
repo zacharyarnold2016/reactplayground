@@ -7,9 +7,10 @@ const SortBar = () => {
     console.log("DING!");
   }, []);
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     setOpen(!open);
-  };
+  }, [open]);
+
   return (
     <div className="sortBar">
       <div className="genreBar">
