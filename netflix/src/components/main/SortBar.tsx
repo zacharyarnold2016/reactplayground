@@ -14,12 +14,7 @@ const SortBar = () => {
   return (
     <div className="sortBar">
       <div className="genreBar">
-        <h1
-          onClick={() => {
-            throw Error("Error Boundary Works!");
-          }}
-          className="sortOption"
-        >
+        <h1 onClick={ding} className="sortOption">
           Action
         </h1>
         <h1 onClick={ding} className="sortOption">
