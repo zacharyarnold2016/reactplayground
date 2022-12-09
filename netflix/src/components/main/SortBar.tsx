@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 const SortBar = () => {
   const [open, setOpen] = useState(false);
+
+  const ding = useCallback(() => {
+    console.log("DING!");
+  }, []);
 
   const handleOpen = () => {
     setOpen(!open);
@@ -9,11 +13,21 @@ const SortBar = () => {
   return (
     <div className="sortBar">
       <div className="genreBar">
-        <h1>Action</h1>
-        <h1>Drama</h1>
-        <h1>Comedy</h1>
-        <h1>Horror</h1>
-        <h1>Documentary</h1>
+        <h1 onClick={ding} className="sortOption">
+          Action
+        </h1>
+        <h1 onClick={ding} className="sortOption">
+          Drama
+        </h1>
+        <h1 onClick={ding} className="sortOption">
+          Comedy
+        </h1>
+        <h1 onClick={ding} className="sortOption">
+          Horror
+        </h1>
+        <h1 onClick={ding} className="sortOption">
+          Documentary
+        </h1>
       </div>
       <div className="sortBy">
         <h1 style={{ color: "#555555" }}>Sort By</h1>

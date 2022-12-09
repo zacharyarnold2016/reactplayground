@@ -6,25 +6,25 @@ import ContextMenu from "./ContextMenu";
 const films = [
   {
     img: "https://picsum.photos/400/400",
-    name: "Name",
+    name: "Pulp",
     genre: "Action",
     year: 2005,
   },
   {
     img: "https://picsum.photos/400/400",
-    name: "Name",
+    name: "Fiction",
     genre: "Action",
     year: 2005,
   },
   {
     img: "https://picsum.photos/400/400",
-    name: "Name",
+    name: "Is",
     genre: "Action",
     year: 2005,
   },
   {
     img: "https://picsum.photos/400/400",
-    name: "Name",
+    name: "Okay I guess",
     genre: "Action",
     year: 2005,
   },
@@ -37,15 +37,19 @@ const VideoBar = () => {
       <div className="filmsContainer">
         {films.map((element) => {
           return (
-            <div className="film">
-              <ContextMenu />
-              <Film
-                img={element.img}
-                name={element.name}
-                genre={element.genre}
-                year={element.year}
-              />
-            </div>
+            <ul>
+              <div className="film">
+                <li key={element.name}>
+                  <ContextMenu />
+                  <Film
+                    img={element.img}
+                    name={element.name}
+                    genre={element.genre}
+                    year={element.year}
+                  />
+                </li>
+              </div>
+            </ul>
           );
         })}
       </div>
