@@ -5,8 +5,13 @@ import { ButtonStyle, ButtonType } from "../../interfaces/Button.interface";
 const TopBar = () => {
   return (
     <div className="searchContainer">
-      <input className="searchBar" type="text" name="Search" placeholder="Search"/>
-      <Button style={ButtonStyle.A} purpose={ButtonType.SUBMIT} text="Submit" />
+      <input
+        className="searchBar"
+        type="text"
+        name="Search"
+        placeholder="Search"
+      />
+      <Button style={ButtonStyle.D} purpose={ButtonType.SUBMIT} text="Submit" />
       <div className="addMovie">
         <Button
           style={ButtonStyle.B}

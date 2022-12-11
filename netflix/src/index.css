@@ -93,17 +93,42 @@ body {
   padding: 5px;
   text-align: center;
   position: relative;
-  top: 3vh;
-  left: 65vw;
   outline: none;
   text-decoration: none;
   border: none;
+  font-size: x-large;
+}
+
+.submitButtonTop {
+  background-color: var(--accent-color);
+  margin-left: 5px;
+  height: 5vh;
+  width: 5vw;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-size: x-large;
+  justify-content: center;
+  top: 4vh;
+  left: 70vw;
+}
+
+.submitButtonTop:hover {
+  color: var(--text-color);
+  border: 1px;
+  border-color: var(--text-color);
+  cursor: pointer;
 }
 
 .primaryButton:hover {
   color: var(--text-color);
   border: 1px;
   border-color: var(--text-color);
+  cursor: pointer;
 }
 
 .secondaryButton {
@@ -119,6 +144,10 @@ body {
   font-size: x-large;
   position: relative;
   top: 2vh;
+}
+
+.secondaryButton:hover {
+  cursor: pointer;
 }
 
 /* Top Container */

@@ -1,4 +1,4 @@
-function ErrorFallback({ error, resetErrorBoundary }: any) {
+const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
   return (
     <div role="alert">
       <p>Something went wrong:</p>
@@ -6,6 +6,6 @@ function ErrorFallback({ error, resetErrorBoundary }: any) {
       <button onClick={resetErrorBoundary}>Try again</button>
     </div>
   );
-}
+};
 
 export default ErrorFallback;

@@ -15,4 +15,5 @@ export enum ButtonStyle {
   A = "primaryButton",
   B = "secondaryButton",
   C = "tertiaryButton",
+  D = "submitButtonTop",
 }
