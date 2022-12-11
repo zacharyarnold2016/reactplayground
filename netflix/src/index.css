@@ -1,91 +1,9 @@
-:root {
-  --bg-color: #424242;
-  --text-color: #ffffff;
-  --accent-color: #f65261;
-  --trim-color: #555555;
-  --extra-color: #232323;
-}
-
-/* Core Types */
 body {
-  font-family: "Noto Sans", sans-serif;
-
-  font-family: "Source Sans Pro", sans-serif;
-
-  background-color: var(--extra-color);
-
-  overflow-x: hidden;
+  background-color: #424242;
+  overflow-y: scroll;
 }
 
-/* Base */
-.app {
-  background-color: var(--bg-color);
-  min-height: 100%;
-  min-width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--text-color);
-}
-.logo {
-  position: absolute;
-  color: var(--accent-color);
-  top: 0vh;
-}
-
-/* Core Container */
-.mainContainer {
-  background: var(--extra-color);
-}
-
-.filmsContainer {
-  background: var(--extra-color);
-  display: grid;
-  width: 100%;
-  grid-template-columns: 34% 33% 33%;
-  justify-content: left;
-}
-
-.film {
-  margin: 2vh;
-  width: fit-content;
-  justify-items: center;
-  position: relative;
-  list-style: none;
-}
-
-.film:hover {
-  cursor: pointer;
-}
-
-.details {
-  display: grid;
-  grid-template-columns: 70% auto;
-}
-/* Sort */
-
-.genreBar {
-  display: flex;
-  justify-content: left;
-  grid-column: span 2;
-  color: var(--text-color);
-}
-.sortBar {
-  display: grid;
-  grid-template-columns: 40% 40% 20%;
-  border-bottom: 4px solid white;
-  padding: 10px;
-  margin: 1rem;
-}
-.sortBy {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-/* Buttons */
-.primaryButton {
-  background-color: var(--accent-color);
+button, .--sec, .--addMovie, .--pri, .--submit {
   margin-left: 5px;
   height: 4vh;
   width: 10%;
@@ -98,59 +16,31 @@ body {
   border: none;
   font-size: x-large;
 }
-
-.submitButtonTop {
-  background-color: var(--accent-color);
-  margin-left: 5px;
-  height: 5vh;
-  width: 5vw;
-  border-radius: 5px;
-  padding: 5px;
-  text-align: center;
-  position: relative;
-  outline: none;
-  text-decoration: none;
-  border: none;
-  font-size: x-large;
-  justify-content: center;
-  top: 4vh;
-  left: 70vw;
-}
-
-.submitButtonTop:hover {
-  color: var(--text-color);
-  border: 1px;
-  border-color: var(--text-color);
+button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
+  color: #ffffff;
+  border: 1px #ffffff;
   cursor: pointer;
 }
 
-.primaryButton:hover {
-  color: var(--text-color);
-  border: 1px;
-  border-color: var(--text-color);
-  cursor: pointer;
+.--pri, .--submit {
+  background-color: #f65261;
 }
 
-.secondaryButton {
-  background-color: var(--extra-color);
-
-  color: var(--text-color);
-  margin-left: 5px;
-  height: 6vh;
-  width: 15vh;
-  border-radius: 10px;
-  padding: 5px;
-  text-align: center;
-  font-size: x-large;
-  position: relative;
-  top: 2vh;
+.--sec, .--addMovie {
+  background-color: transparent;
 }
 
-.secondaryButton:hover {
-  cursor: pointer;
+.App {
+  background-color: #424242;
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
 }
 
-/* Top Container */
 .searchContainer {
   background-image: url("https://i.picsum.photos/id/681/5000/2951.jpg?hmac=01BxiMvFITUx4h3xM_x0IUp2w5KyQHzUd1AVxm8FKG0");
   height: 10%;
@@ -164,9 +54,25 @@ body {
   background-size: cover;
 }
 
-/* Search Bar Contents */
+.--submit {
+  top: 4vh;
+  left: 70vw;
+}
+
+.--addMovie {
+  position: absolute;
+  color: #ffffff;
+  top: 1vh;
+  right: 15vh;
+  border: 1px solid #ffffff;
+}
+.--addMovie:hover {
+  border: 1px solid #f65261;
+  color: #f65261;
+}
+
 .searchBar {
-  background: var(--extra-color);
+  background: #232323;
   height: 2vh;
   width: 60%;
   border-radius: 5px;
@@ -175,24 +81,9 @@ body {
   text-align: left;
   position: absolute;
   top: 10vh;
-  color: var(--text-color);
+  color: #ffffff;
   font-size: x-large;
-  box-shadow: inset 0 0 5px var(--text-color);
-}
-
-.addMovie {
-  position: absolute;
-  top: 1vh;
-  right: 15vh;
-}
-
-.context {
-  position: absolute;
-  height: 4vh;
-  width: 4vh;
-  top: 10px;
-  right: 10px;
-  color: var(--text-color);
+  box-shadow: inset 0 0 5px #ffffff;
 }
 
 .searchResults {
@@ -204,9 +95,76 @@ body {
 .sortOption {
   margin-right: 2vw;
 }
-
 .sortOption:hover {
   cursor: pointer;
-  box-shadow: 0 5px 15px var(--text-color);
+  box-shadow: 0 5px 15px #ffffff;
   border-radius: 10px;
 }
+
+.context {
+  position: absolute;
+  height: 4vh;
+  width: 4vh;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+}
+.context:hover {
+  color: #f65261;
+}
+
+.film {
+  margin: 2vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-items: center;
+  position: relative;
+  list-style: none;
+}
+.film:hover {
+  cursor: pointer;
+}
+
+.mainContainer {
+  background: #232323;
+}
+
+.filmsContainer {
+  background: var(--extra-color);
+  display: grid;
+  width: 100%;
+  grid-template-columns: 34% 33% 33%;
+  justify-content: left;
+}
+
+.--details {
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.genreBar {
+  display: flex;
+  justify-content: left;
+  grid-column: span 2;
+  color: var(--text-color);
+}
+
+.sortBar {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  border-bottom: 4px solid white;
+  padding: 10px;
+  margin: 1rem;
+}
+
+.sortBy {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.logo {
+  position: absolute;
+  color: #f65261;
+  top: 0vh;
+}/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../util/Button";
-import { ButtonStyle, ButtonType } from "../../interfaces/Button.interface";
+import { ButtonType } from "../../interfaces/Button.interface";
 
 const TopBar = () => {
   return (
@@ -11,14 +11,12 @@ const TopBar = () => {
         name="Search"
         placeholder="Search"
       />
-      <Button style={ButtonStyle.D} purpose={ButtonType.SUBMIT} text="Submit" />
-      <div className="addMovie">
-        <Button
-          style={ButtonStyle.B}
-          purpose={ButtonType.BUTTON}
-          text="Add Movie"
-        />
-      </div>
+      <Button styling="--submit" purpose={ButtonType.SUBMIT} text="Submit" />
+      <Button
+        styling="--addMovie"
+        purpose={ButtonType.BUTTON}
+        text="Add Movie"
+      />
       <h2 className="logo">Find Your Movie</h2>
     </div>
   );

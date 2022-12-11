@@ -1,11 +1,10 @@
 import React from "react";
-import { button } from "../../interfaces/Button.interface";
 
-const Button = (props: button) => {
+const Button = (props: any) => {
   return (
     <button
       type={props.purpose}
-      className={props.style}
+      className={props.styling}
       onClick={props.callback || null}
     >
       {props.text}

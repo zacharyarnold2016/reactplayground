@@ -6,7 +6,7 @@ import ErrorFallback from "./err/ErrorFallback";
 
 const App: React.FC = () => {
   return (
-    <div className="app">
+    <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
         <TopBar />
         <VideoBar />

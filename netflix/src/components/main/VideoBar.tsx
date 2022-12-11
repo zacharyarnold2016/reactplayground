@@ -1,5 +1,5 @@
 import React from "react";
-import SortBar from "./SortBar";
+import SortBar from "./sort/SortBar";
 import Result from "./Results";
 import FilmList from "./films/FilmList";
 
