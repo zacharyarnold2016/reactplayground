@@ -7,8 +7,11 @@ $font-Family-1: "Noto Sans", sans-serif;
 $font-family-2: "Source Sans Pro", sans-serif;
 
 body {
+  box-sizing: border-box;
   background-color: $bgColor;
   overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: $font-Family-1, $font-family-2;
 }
 
 button {
@@ -31,10 +34,12 @@ button {
 }
 .--pri {
   @extend button;
+  box-sizing: border-box;
   background-color: $accentColor;
 }
 .--sec {
   @extend button;
+  box-sizing: border-box;
   background-color: transparent;
 }
 
@@ -50,6 +55,7 @@ button {
 }
 
 .searchContainer {
+  box-sizing: border-box;
   background-image: url("https://i.picsum.photos/id/681/5000/2951.jpg?hmac=01BxiMvFITUx4h3xM_x0IUp2w5KyQHzUd1AVxm8FKG0");
   height: 10%;
   width: 100%;
@@ -75,11 +81,12 @@ button {
   border: 1px solid $textColor;
   &:hover {
     border: 1px solid $accentColor;
-    color: $accentColor
+    color: $accentColor;
   }
 }
 
 .searchBar {
+  box-sizing: border-box;
   background: $extra-color;
   height: 2vh;
   width: 60%;
@@ -104,8 +111,7 @@ button {
   margin-right: 2vw;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 5px 15px $textColor;
-    border-radius: 10px;
+    color: $accentColor;
   }
 }
 
@@ -117,8 +123,9 @@ button {
   right: 10px;
   color: $textColor;
   &:hover {
-    color: $accentColor
+    color: $accentColor;
   }
+  z-index: 50;
 }
 
 .film {
@@ -133,10 +140,12 @@ button {
 }
 
 .mainContainer {
+  box-sizing: border-box;
   background: $extra-color;
 }
 
 .filmsContainer {
+  box-sizing: border-box;
   background: var(--extra-color);
   display: grid;
   width: 100%;
@@ -150,12 +159,14 @@ button {
 }
 
 .genreBar {
+  box-sizing: border-box;
   display: flex;
   justify-content: left;
   grid-column: span 2;
   color: var(--text-color);
 }
 .sortBar {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 40% 40% 20%;
   border-bottom: 4px solid white;
@@ -163,6 +174,7 @@ button {
   margin: 1rem;
 }
 .sortBy {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -171,4 +183,94 @@ button {
   position: absolute;
   color: $accentColor;
   top: 0vh;
+}
+
+.addContainer {
+  box-sizing: border-box;
+  background-color: $extra-color;
+  height: 80vh;
+  width: 80vw;
+  top: 10vh;
+  left: 10vw;
+  position: fixed;
+  opacity: 95%;
+  z-index: 100;
+}
+
+.formContainer {
+  box-sizing: border-box;
+  padding: 1vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.formInput {
+  position: relative;
+  height: 50%;
+  width: 60%;
+  padding: 1vh;
+  border-radius: 5px;
+}
+
+.formLabel {
+  box-sizing: border-box;
+  margin: 2rem;
+  display: grid;
+  color: $accentColor;
+  font-size: xx-large;
+}
+
+.overview {
+  @extend .formLabel;
+  display: grid;
+  grid-column: 1 / span 2;
+  width: 75vw;
+  height: 10vh;
+  clear: both;
+  border-radius: 5px;
+}
+
+.addMovieTitle {
+  display: inline;
+  padding: 5px;
+  color: $accentColor;
+}
+
+.addMovieSubmit {
+  @extend .--pri;
+  width: fit-content;
+  height: fit-content;
+}
+.addMovieRest {
+  @extend .--sec;
+  width: fit-content;
+  height: fit-content;
+}
+
+.addMovieButtons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.dropdown {
+  box-sizing: border-box;
+  position: absolute;
+  display: grid;
+  background-color: $bgColor;
+  opacity: 95%;
+  width: 100%;
+}
+
+.dropdownOption {
+  &:hover {
+    height: 100%;
+    width: 100%;
+    background: #f65261;
+    color: #232323;
+  }
 }

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { AiOutlineDownCircle } from "react-icons/ai";
+import Dropdown from "./Dropdown";
 
-const click = () => {
-  console.log("Click!");
-};
 const ContextMenu = () => {
-  return <AiOutlineDownCircle className="context" onClick={click} />;
+  const [drop, setDrop] = useState(false);
+
+  const handleDrop = useCallback(() => {
+    setDrop(!drop);
+  }, [drop]);
+
+  return (
+    <>
+      <AiOutlineDownCircle className="context" onClick={handleDrop} />
+      {drop ? <Dropdown /> : null}
+    </>
+  );
 };
 export default ContextMenu;

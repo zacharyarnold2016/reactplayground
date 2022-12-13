@@ -1,9 +1,12 @@
 body {
+  box-sizing: border-box;
   background-color: #424242;
   overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Noto Sans", sans-serif, "Source Sans Pro", sans-serif;
 }
 
-button, .--sec, .--addMovie, .--pri, .--submit {
+button, .--sec, .addMovieRest, .--addMovie, .--pri, .addMovieSubmit, .--submit {
   margin-left: 5px;
   height: 4vh;
   width: 10%;
@@ -16,17 +19,19 @@ button, .--sec, .--addMovie, .--pri, .--submit {
   border: none;
   font-size: x-large;
 }
-button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
+button:hover, .--sec:hover, .addMovieRest:hover, .--addMovie:hover, .--pri:hover, .addMovieSubmit:hover, .--submit:hover {
   color: #ffffff;
   border: 1px #ffffff;
   cursor: pointer;
 }
 
-.--pri, .--submit {
+.--pri, .addMovieSubmit, .--submit {
+  box-sizing: border-box;
   background-color: #f65261;
 }
 
-.--sec, .--addMovie {
+.--sec, .addMovieRest, .--addMovie {
+  box-sizing: border-box;
   background-color: transparent;
 }
 
@@ -42,6 +47,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .searchContainer {
+  box-sizing: border-box;
   background-image: url("https://i.picsum.photos/id/681/5000/2951.jpg?hmac=01BxiMvFITUx4h3xM_x0IUp2w5KyQHzUd1AVxm8FKG0");
   height: 10%;
   width: 100%;
@@ -72,6 +78,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .searchBar {
+  box-sizing: border-box;
   background: #232323;
   height: 2vh;
   width: 60%;
@@ -97,8 +104,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 .sortOption:hover {
   cursor: pointer;
-  box-shadow: 0 5px 15px #ffffff;
-  border-radius: 10px;
+  color: #f65261;
 }
 
 .context {
@@ -108,6 +114,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
   top: 10px;
   right: 10px;
   color: #ffffff;
+  z-index: 50;
 }
 .context:hover {
   color: #f65261;
@@ -127,10 +134,12 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .mainContainer {
+  box-sizing: border-box;
   background: #232323;
 }
 
 .filmsContainer {
+  box-sizing: border-box;
   background: var(--extra-color);
   display: grid;
   width: 100%;
@@ -144,6 +153,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .genreBar {
+  box-sizing: border-box;
   display: flex;
   justify-content: left;
   grid-column: span 2;
@@ -151,6 +161,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .sortBar {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 40% 40% 20%;
   border-bottom: 4px solid white;
@@ -159,6 +170,7 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
 }
 
 .sortBy {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -167,4 +179,98 @@ button:hover, .--sec:hover, .--addMovie:hover, .--pri:hover, .--submit:hover {
   position: absolute;
   color: #f65261;
   top: 0vh;
+}
+
+.addContainer {
+  box-sizing: border-box;
+  background-color: #232323;
+  height: 80vh;
+  width: 80vw;
+  top: 10vh;
+  left: 10vw;
+  position: fixed;
+  opacity: 95%;
+  z-index: 100;
+}
+
+.formContainer {
+  box-sizing: border-box;
+  padding: 1vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.formInput {
+  position: relative;
+  height: 50%;
+  width: 60%;
+  padding: 1vh;
+  border-radius: 5px;
+}
+
+.formLabel, .overview {
+  box-sizing: border-box;
+  margin: 2rem;
+  display: grid;
+  color: #f65261;
+  font-size: xx-large;
+}
+
+.overview {
+  display: grid;
+  grid-column: 1/span 2;
+  width: 75vw;
+  height: 10vh;
+  clear: both;
+  border-radius: 5px;
+}
+
+.addMovieTitle {
+  display: inline;
+  padding: 5px;
+  color: #f65261;
+}
+
+.addMovieSubmit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.addMovieRest {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.addMovieButtons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.dropdown {
+  box-sizing: border-box;
+  position: absolute;
+  display: grid;
+  background-color: #424242;
+  opacity: 95%;
+  width: 100%;
+}
+
+.dropdownOption:hover {
+  height: 100%;
+  width: 100%;
+  background: #f65261;
+  color: #232323;
 }/*# sourceMappingURL=index.css.map */
