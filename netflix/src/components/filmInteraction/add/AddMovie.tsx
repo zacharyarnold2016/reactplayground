@@ -5,6 +5,7 @@ const AddMovie = () => {
   return (
     <div className="addContainer">
       <h1 className="addMovieTitle">Add Movie</h1>
+      <span className="close">X</span>
       <MovieForm />
     </div>
   );

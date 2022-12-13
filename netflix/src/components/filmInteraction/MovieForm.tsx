@@ -32,10 +32,8 @@ const MovieForm = () => {
           <input type="text" name="RunTime" className="formInput" />
         </label>
         <div className="overviewForm">
-          <label className="formLabel">
             Overview:
             <input type="text" name="Overview" className="overview" />
-          </label>
         </div>
         <div />
         <div />
