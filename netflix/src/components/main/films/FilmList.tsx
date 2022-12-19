@@ -1,17 +1,17 @@
 import React from "react";
 import Film from "./Film";
 import ContextMenu from "./ContextMenu";
-import films from "../../../dummyFilms";
+import { film } from "../../../interfaces/Film.interface";
 
-const FilmList = () => {
+const FilmList = (props: any) => {
   return (
     <ul>
       <div className="filmsContainer">
-        {films.map((element) => {
+        {props.films.map((element: film) => {
           return (
             <div className="film">
               <li key={element.key}>
-                <ContextMenu />
+                <ContextMenu callback={props.callback} />
                 <Film
                   key={element.key}
                   img={element.img}

@@ -1,5 +1,5 @@
 import React from "react";
-import film from "../../../interfaces/Film.interface";
+import { film } from "../../../interfaces/Film.interface";
 
 const Film = (props: film) => {
   return (

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import Dropdown from "./Dropdown";
 
-const ContextMenu = () => {
+const ContextMenu = (props: any) => {
   const [drop, setDrop] = useState(false);
 
   const handleDrop = useCallback(() => {
@@ -12,7 +12,7 @@ const ContextMenu = () => {
   return (
     <>
       <AiOutlineDownCircle className="context" onClick={handleDrop} />
-      {drop ? <Dropdown /> : null}
+      {drop ? <Dropdown callback={props.callback} /> : null}
     </>
   );
 };

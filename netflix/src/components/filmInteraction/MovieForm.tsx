@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/Button.interface";
 
-const MovieForm = () => {
+const MovieForm = (props: any) => {
   return (
     <form>
       {/* <h1 className="addMovieTitle">Add Movie</h1> */}
@@ -32,8 +32,8 @@ const MovieForm = () => {
           <input type="text" name="RunTime" className="formInput" />
         </label>
         <div className="overviewForm">
-            Overview:
-            <input type="text" name="Overview" className="overview" />
+          Overview:
+          <input type="text" name="Overview" className="overview" />
         </div>
         <div />
         <div />

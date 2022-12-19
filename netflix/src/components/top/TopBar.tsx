@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/Button.interface";
 import AddMovie from "../filmInteraction/add/AddMovie";
 
 const TopBar = () => {
   const [addMovie, setAddMovie] = useState(false);
+  const handleFormState = useCallback(() => {
+    setAddMovie(!addMovie);
+  }, [addMovie]);
 
   return (
     <div className="searchContainer">
@@ -21,11 +24,9 @@ const TopBar = () => {
         styling="--addMovie"
         purpose={ButtonType.BUTTON}
         text="Add Movie"
-        callback={() => {
-          setAddMovie(!addMovie);
-        }}
+        callback={handleFormState}
       />
-      {addMovie ? <AddMovie /> : null}
+      {addMovie ? <AddMovie callback={handleFormState} /> : null}
       <h2 className="logo">Find Your Movie</h2>
     </div>
   );

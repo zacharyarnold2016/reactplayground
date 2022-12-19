@@ -117,6 +117,7 @@ button:hover, .--sec:hover, .addMovieReset:hover, .--addMovie:hover, .--pri:hove
 
 .mainContainer {
   box-sizing: border-box;
+  display: relative;
   height: 100%;
   background: #232323;
 }
@@ -189,8 +190,12 @@ button:hover, .--sec:hover, .addMovieReset:hover, .--addMovie:hover, .--pri:hove
   font-size: 2rem;
   font-weight: 600;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+}
+.close:hover {
+  cursor: pointer;
+  color: #f65261;
 }
 
 .addContainer {
@@ -280,4 +285,16 @@ button:hover, .--sec:hover, .addMovieReset:hover, .--addMovie:hover, .--pri:hove
   width: 100%;
   background: #f65261;
   color: #232323;
+}
+
+.delete {
+  top: 35%;
+  left: 35%;
+  color: #f65261;
+  padding: 10px;
+  background-color: #232323;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  z-index: 100;
 }/*# sourceMappingURL=index.css.map */

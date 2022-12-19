@@ -1,9 +1,9 @@
 import React from "react";
 
-const Result = () => {
+const Result = (props: any) => {
   return (
     <div className="searchResults">
-      <h2>41 Dummy Results</h2>
+      <h2> {props.results} Results</h2>
     </div>
   );
 };

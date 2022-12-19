@@ -4,10 +4,10 @@ import { ButtonType } from "../../../interfaces/Button.interface";
 
 const DeleteMovie = () => {
   return (
-    <div>
+    <div className="delete">
       <h1>Delete Movie?</h1>
       <h2>Are you sure you want to delete this movie?</h2>
-      <Button styling="primary" type={ButtonType.SUBMIT} />
+      <Button styling="--pri" type={ButtonType.SUBMIT} text="Delete This" />
     </div>
   );
 };
