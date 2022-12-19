@@ -1,7 +1,6 @@
 import React from "react";
-import Film from "./Film";
-import ContextMenu from "./ContextMenu";
 import { film } from "../../../interfaces/Film.interface";
+import MovieCard from "./MovieCard";
 
 const FilmList = (props: any) => {
   return (
@@ -9,18 +8,14 @@ const FilmList = (props: any) => {
       <div className="filmsContainer">
         {props.films.map((element: film) => {
           return (
-            <div className="film">
-              <li key={element.key}>
-                <ContextMenu callback={props.callback} />
-                <Film
-                  key={element.key}
-                  img={element.img}
-                  name={element.name}
-                  genre={element.genre}
-                  year={element.year}
-                />
-              </li>
-            </div>
+            <MovieCard
+              key={element.key}
+              img={element.img}
+              name={element.name}
+              genre={element.genre}
+              year={element.year}
+              callback={props.callback}
+            />
           );
         })}
       </div>
