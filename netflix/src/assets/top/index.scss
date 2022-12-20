@@ -1,0 +1,50 @@
+.searchContainer {
+  box-sizing: border-box;
+  background-image: url("https://i.picsum.photos/id/681/5000/2951.jpg?hmac=01BxiMvFITUx4h3xM_x0IUp2w5KyQHzUd1AVxm8FKG0");
+  height: 10%;
+  width: 100%;
+  padding: 7vh;
+  padding-top: 7vh;
+  border: 4vh;
+  font-size: 2vh;
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+}
+.searchBar {
+  box-sizing: border-box;
+  background: $extra-color;
+  height: 3vh;
+  width: 60%;
+  border-radius: 5px;
+  opacity: 85%;
+  padding: 1vh;
+  text-align: left;
+  position: absolute;
+  top: 7vh;
+  color: $textColor;
+  font-size: x-large;
+  box-shadow: inset 0 0 5px $textColor;
+}
+.logo {
+  position: absolute;
+  color: $accentColor;
+  top: 0vh;
+}
+
+// Main Bar
+
+.searchResults {
+  justify-content: left;
+  text-align: left;
+  padding-left: 2vh;
+}
+.sortOption {
+  margin-right: 2vw;
+  margin-bottom: 0px;
+
+  &:hover {
+    cursor: pointer;
+    color: $accentColor;
+  }
+}

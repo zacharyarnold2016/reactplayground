@@ -1,0 +1,32 @@
+.--pri {
+  @extend button;
+  box-sizing: border-box;
+  background-color: $accentColor;
+  height: 3vh;
+  width: 10vw;
+}
+
+.--sec {
+  @extend button;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.--submit {
+  @extend .--pri;
+  left: 60vw;
+}
+
+.--addMovie {
+  @extend .--sec;
+  position: absolute;
+  color: $textColor;
+  top: 1vh;
+  right: 10vh;
+  border: 1px solid $textColor;
+
+  &:hover {
+    border: 1px solid $accentColor;
+    color: $accentColor;
+  }
+}
