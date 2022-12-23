@@ -1,0 +1,31 @@
+body {
+  box-sizing: border-box;
+  background-color: #424242;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Noto Sans", sans-serif, "Source Sans Pro", sans-serif;
+}
+
+button {
+  margin-left: 5px;
+  height: 6vh;
+  width: 10%;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  position: absolute;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-size: x-large;
+}
+button:hover {
+  color: #ffffff;
+  border: 1px #ffffff;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}/*# sourceMappingURL=core.css.map */

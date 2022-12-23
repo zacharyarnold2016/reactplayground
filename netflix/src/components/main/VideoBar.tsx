@@ -9,48 +9,17 @@ import films from "../../dummyFilms";
 
 const VideoBar = (props) => {
   const [videos, setVideos] = useState(films);
-
-  /*
-   * Trying to figure out a way to do this without having
-   * create a new function for every single genre.
-   * It's definitely me overlooking something, please point
-   * me in the right direction.
-   */
-  const sortAction = () => {
-    const sortedFilms = films.filter((element) => element.genre === "Action");
-    setVideos(sortedFilms);
-  };
-  const sortDrama = () => {
-    const sortedFilms = films.filter((element) => element.genre === "Drama");
-    setVideos(sortedFilms);
-  };
-  const sortComedy = () => {
-    const sortedFilms = films.filter((element) => element.genre === "Comedy");
-    setVideos(sortedFilms);
-  };
-  const sortHorror = () => {
-    const sortedFilms = films.filter((element) => element.genre === "Horror");
-    setVideos(sortedFilms);
-  };
-  const sortDocumentary = () => {
-    const sortedFilms = films.filter(
-      (element) => element.genre === "Documentary"
-    );
-    setVideos(sortedFilms);
-  };
-  const sortReset = () => {
-    setVideos(films);
-  };
-  const sortOptions = {
-    sortAction,
-    sortDrama,
-    sortComedy,
-    sortHorror,
-    sortDocumentary,
-    sortReset,
-  };
-
   const [results, setResults] = useState(0);
+
+  const sort = (genre) => {
+    let sortedFilms = films;
+    if (genre === "All") {
+      setVideos(sortedFilms);
+    } else {
+      const sortedFilms = films.filter((element) => element.genre === genre);
+      setVideos(sortedFilms);
+    }
+  };
 
   const getResults = useCallback(() => {
     console.log("Pinged!");
@@ -62,7 +31,7 @@ const VideoBar = (props) => {
 
   return (
     <div className="mainContainer">
-      <SortBar callback={sortOptions} />
+      <SortBar callback={sort} />
       <Result results={results} />
       <FilmList films={videos} callback={props.callback} />
     </div>

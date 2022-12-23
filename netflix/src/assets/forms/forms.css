@@ -1,6 +1,6 @@
 .addContainer {
   box-sizing: border-box;
-  background-color: $extra-color;
+  background-color: #232323;
   height: 80vh;
   width: 80vw;
   top: 10vh;
@@ -8,8 +8,7 @@
   position: fixed;
   padding: 1rem;
   z-index: 100;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 .formContainer {
   box-sizing: border-box;
@@ -20,44 +19,39 @@
   justify-content: left;
   height: 100%;
   width: 100%;
-  z-index: 100;
-}
+  z-index: 100; }
 
 .formInput {
   height: 50%;
   width: 60%;
   padding: 1vh;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 .formLabel {
   box-sizing: border-box;
   margin: 4rem;
   height: fit-content;
   display: grid;
-  color: $accentColor;
-  font-size: xx-large;
-}
+  color: #f65261;
+  font-size: xx-large; }
 
 .close {
   font-size: 2rem;
   font-weight: 600;
   position: absolute;
   top: 10px;
-  right: 10px;
-  &:hover {
+  right: 10px; }
+  .close:hover {
     cursor: pointer;
-    color: $accentColor;
-  }
-}
+    color: #f65261; }
+
 .delete {
   top: 35%;
   left: 35%;
-  color: $accentColor;
+  color: #f65261;
   padding: 10px;
-  background-color: $extra-color;
+  background-color: #232323;
   position: absolute;
   width: 25%;
   height: 25%;
-  z-index: 100;
-}
+  z-index: 100; }

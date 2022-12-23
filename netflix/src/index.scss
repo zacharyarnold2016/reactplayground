@@ -1,3 +1,15 @@
+@import "./assets/variables/variables.scss";
+@import "./assets/forms/forms.scss";
+@import "./assets/buttons/buttons.scss";
+@import "./assets/core/core.scss";
+@import "./assets/dropdown/dropdown.scss";
+@import "./assets/filmInteraction/add.scss";
+@import "./assets/films/films.scss";
+@import "./assets/forms/forms.scss";
+@import "./assets/main/main.scss";
+@import "./assets/sort/sort.scss";
+@import "./assets/top/top.scss";
+
 .App {
   background-color: $bgColor;
   min-height: 100%;

@@ -1,8 +1,11 @@
+@import "../variables/variables.scss";
+@import "../core/core.scss";
+
 .--pri {
   @extend button;
   box-sizing: border-box;
   background-color: $accentColor;
-  height: 3vh;
+  height: 5vh;
   width: 10vw;
 }
 
@@ -14,15 +17,17 @@
 
 .--submit {
   @extend .--pri;
-  left: 60vw;
+  left: 85%;
+  top: 50%;
 }
 
 .--addMovie {
   @extend .--sec;
-  position: absolute;
-  color: $textColor;
+  color: $accentColor;
+  background-color: $extra-color;
+  border: 0px;
   top: 1vh;
-  right: 10vh;
+  right: 1vw;
   border: 1px solid $textColor;
 
   &:hover {
