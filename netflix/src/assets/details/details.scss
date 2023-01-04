@@ -1,0 +1,46 @@
+@import "../variables/variables.scss";
+
+.details {
+  height: 35%;
+  width: 100%;
+  background-color: $extra-color;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  position: relative;
+}
+
+.description {
+  display: grid;
+}
+
+.switchDetails {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: $accentColor;
+  height: 2vh;
+  width: 2vw;
+  :hover {
+    cursor: pointer;
+    color: $textColor
+  }
+}
+
+.detailHead {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+
+.detailsSubtext {
+  display: grid;
+  grid-template-columns: 20% 20%;
+}
+
+.rating {
+  border-radius: 50px;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid white;
+  display: inline;
+}

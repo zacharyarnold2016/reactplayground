@@ -23,7 +23,7 @@ const TopBar = () => {
       <Button
         styling="--addMovie"
         purpose={ButtonType.BUTTON}
-        text="Add Movie"
+        text="+Add Movie"
         callback={handleFormState}
       />
       {addMovie ? <AddMovie callback={handleFormState} /> : null}
