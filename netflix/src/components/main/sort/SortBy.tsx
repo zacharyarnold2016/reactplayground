@@ -12,18 +12,16 @@ const SortBy = () => {
   }, [open]);
   return (
     <div className="sortBy">
-      <h1 style={{ color: "#555555" }}>Sort By</h1>
+      <h1 style={{ color: "#555555", paddingRight: "5px" }}>Sort By: </h1>
       <div style={{ display: "inline-flex" }}>
-        <h1 onClick={handleOpen}>Release Year</h1>
-        <AiFillCaretDown />
+        <h1 onClick={handleOpen}>
+          Release Year <AiFillCaretDown />
+        </h1>
+
         {open && (
           <ul>
             {options.map((element) => {
-              return (
-                <li>
-                  <button>{element}</button>
-                </li>
-              );
+              return <li style={{ padding: "1px" }}>{element}</li>;
             })}
           </ul>
         )}

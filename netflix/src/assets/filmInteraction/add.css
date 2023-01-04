@@ -7,12 +7,12 @@ body {
 
 button, .--pri, .--submit, .addMovieSubmit, .--sec, .--addMovie, .addMovieReset {
   margin-left: 5px;
-  height: 4vh;
+  height: 6vh;
   width: 10%;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
-  position: relative;
+  position: absolute;
   outline: none;
   text-decoration: none;
   border: none;
@@ -22,10 +22,14 @@ button, .--pri, .--submit, .addMovieSubmit, .--sec, .--addMovie, .addMovieReset 
     border: 1px #ffffff;
     cursor: pointer; }
 
+li {
+  list-style: none;
+  text-decoration: none; }
+
 .--pri, .--submit, .addMovieSubmit {
   box-sizing: border-box;
   background-color: #f65261;
-  height: 3vh;
+  height: 5vh;
   width: 10vw; }
 
 .--sec, .--addMovie, .addMovieReset {
@@ -33,13 +37,15 @@ button, .--pri, .--submit, .addMovieSubmit, .--sec, .--addMovie, .addMovieReset 
   background-color: transparent; }
 
 .--submit {
-  left: 60vw; }
+  left: 85%;
+  top: 50%; }
 
 .--addMovie {
-  position: absolute;
-  color: #ffffff;
+  color: #f65261;
+  background-color: #232323;
+  border: 0px;
   top: 1vh;
-  right: 10vh;
+  right: 1vw;
   border: 1px solid #ffffff; }
   .--addMovie:hover {
     border: 1px solid #f65261;

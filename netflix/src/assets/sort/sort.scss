@@ -2,14 +2,13 @@
 
 .sortBar {
   box-sizing: border-box;
-  display: grid;
   grid-template-columns: 40% 30% 30%;
   border-bottom: 4px solid white;
   margin: 1rem;
 }
 .sortBy {
+  padding-left: 20vw;
   margin: 1vw;
-  box-sizing: border-box;
   display: inline-flex;
   grid-template-columns: auto auto;
 }

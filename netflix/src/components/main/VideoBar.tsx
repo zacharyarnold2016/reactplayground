@@ -22,13 +22,12 @@ const VideoBar = (props) => {
   };
 
   const getResults = useCallback(() => {
-    console.log("Pinged!");
     const count = videos.length;
     setResults(count);
   }, [videos]);
 
+  // useEffect(initFetch, []);
   useEffect(getResults, [videos, getResults]);
-
   return (
     <div className="mainContainer">
       <SortBar callback={sort} />

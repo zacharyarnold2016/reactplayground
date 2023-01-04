@@ -8,14 +8,18 @@ const FilmList = (props: any) => {
       <div className="filmsContainer">
         {props.films.map((element: film) => {
           return (
-            <MovieCard
-              key={element.key}
-              img={element.img}
-              name={element.name}
-              genre={element.genre}
-              year={element.year}
-              callback={props.callback}
-            />
+            <li key={element.key}>
+              <MovieCard
+                key={element.key}
+                img={element.img}
+                name={element.name}
+                genre={element.genre}
+                year={element.year}
+                rating={element.rating}
+                description={element.description}
+                callback={props.callback}
+              />
+            </li>
           );
         })}
       </div>

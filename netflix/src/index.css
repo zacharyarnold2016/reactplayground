@@ -1,6 +1,6 @@
 .addContainer {
   box-sizing: border-box;
-  background-color: #232323;
+  background-color: #424242;
   height: 80vh;
   width: 80vw;
   top: 10vh;
@@ -300,7 +300,7 @@ li {
 
 .addContainer {
   box-sizing: border-box;
-  background-color: #232323;
+  background-color: #424242;
   height: 80vh;
   width: 80vw;
   top: 10vh;
@@ -367,22 +367,20 @@ li {
 
 .mainContainer {
   box-sizing: border-box;
-  display: relative;
   height: 100%;
   background: #232323;
 }
 
 .sortBar {
   box-sizing: border-box;
-  display: grid;
   grid-template-columns: 40% 30% 30%;
   border-bottom: 4px solid white;
   margin: 1rem;
 }
 
 .sortBy {
+  padding-left: 20vw;
   margin: 1vw;
-  box-sizing: border-box;
   display: inline-flex;
   grid-template-columns: auto auto;
 }
@@ -404,7 +402,7 @@ li {
 .searchContainer {
   box-sizing: border-box;
   background-image: url("https://i.picsum.photos/id/827/3333/5000.jpg?hmac=3L_cn4aDdfdcCdMApsSNiMH-ahLLS18QSJQD9tqJHBE");
-  height: 35%;
+  height: 30vh;
   width: 100%;
   padding: 7vh;
   padding-top: 7vh;
@@ -453,12 +451,60 @@ li {
   color: #f65261;
 }
 
+.details {
+  height: 35%;
+  width: 100%;
+  background-color: #232323;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  position: relative;
+}
+
+.description {
+  display: grid;
+}
+
+.switchDetails {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #f65261;
+  height: 2vh;
+  width: 2vw;
+}
+.switchDetails :hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.detailHead {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+
+.detailsSubtext {
+  display: grid;
+  grid-template-columns: 20% 20%;
+}
+
+.rating {
+  border-radius: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid white;
+  display: inline;
+}
+
 .App {
   background-color: #424242;
   min-height: 100%;
   min-width: 100%;
   height: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   color: #ffffff;
