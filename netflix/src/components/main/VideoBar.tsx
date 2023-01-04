@@ -10,6 +10,12 @@ import films from "../../dummyFilms";
 const VideoBar = (props) => {
   const [videos, setVideos] = useState(films);
 
+  /*
+   * Trying to figure out a way to do this without having
+   * create a new function for every single genre.
+   * It's definitely me overlooking something, please point
+   * me in the right direction.
+   */
   const sortAction = () => {
     const sortedFilms = films.filter((element) => element.genre === "Action");
     setVideos(sortedFilms);

@@ -1,8 +1,11 @@
 import React, { useState, useCallback } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
+import { SORTOPTIONS } from "../../../interfaces/enums/lists.enums";
 
 const SortBy = () => {
   const [open, setOpen] = useState(false);
+
+  const options = Object.values(SORTOPTIONS);
 
   const handleOpen = useCallback(() => {
     setOpen(!open);
@@ -13,22 +16,17 @@ const SortBy = () => {
       <div style={{ display: "inline-flex" }}>
         <h1 onClick={handleOpen}>Release Year</h1>
         <AiFillCaretDown />
-        {open ? (
+        {open && (
           <ul>
-            <li>
-              <button>Actors</button>
-            </li>
-            <li>
-              <button>Acclaim</button>
-            </li>
-            <li>
-              <button>Awards</button>
-            </li>
-            <li>
-              <button>Popularity</button>
-            </li>
+            {options.map((element) => {
+              return (
+                <li>
+                  <button>{element}</button>
+                </li>
+              );
+            })}
           </ul>
-        ) : null}
+        )}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const ContextMenu = (props: any) => {
   return (
     <>
       <AiOutlineDownCircle className="context" onClick={handleDrop} />
-      {drop ? <Dropdown callback={props.callback} /> : null}
+      {drop && <Dropdown callback={props.callback} />}
     </>
   );
 };

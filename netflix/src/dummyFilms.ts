@@ -1,4 +1,6 @@
-const films = [
+import { film } from "./interfaces/Film.interface";
+
+const films: film[] = [
   {
     img: "https://picsum.photos/400/400",
     name: "Pulp",
