@@ -27,14 +27,14 @@
 
 .formInput {
   height: 50%;
-  width: 60%;
+  width: 85%;
   padding: 1vh;
   border-radius: 5px;
 }
 
 .formLabel {
   box-sizing: border-box;
-  margin: 4rem;
+  // margin: 4rem;
   height: fit-content;
   display: grid;
   color: $accentColor;
@@ -62,4 +62,11 @@
   width: 25%;
   height: 25%;
   z-index: 100;
+}
+
+.formElement {
+  display: grid;
+  height: 10vh;
+  padding: 1vw;
+  margin: 1vh
 }

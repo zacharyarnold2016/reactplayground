@@ -10,11 +10,14 @@
   justify-content: left;
 }
 .film {
+  box-sizing: border-box;
   margin: 2vh;
-  width: fit-content;
+  width: 400px;
+  height: auto;
   justify-items: center;
   position: relative;
   list-style: none;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;

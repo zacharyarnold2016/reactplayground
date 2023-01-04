@@ -38,7 +38,7 @@ const App: React.FC = () => {
           <TopBar />
         )}
         <VideoBar callback={handleContext} />
-        {edit ? <EditMovie /> : null}
+        {edit ? <EditMovie callback={renderEdit} /> : null}
         {deleted ? <DeleteMovie /> : null}
       </ErrorBoundary>
     </div>
