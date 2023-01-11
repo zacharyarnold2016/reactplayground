@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/Button.interface";
 
-const MovieForm = (props: any) => {
+const MovieForm = () => {
   return (
     <form>
       {/* Correct CSS for this File */}
@@ -39,14 +39,14 @@ const MovieForm = (props: any) => {
         <div />
         <div className="addMovieButtons">
           <Button
-            styling="addMovieSubmit"
-            purpose={ButtonType.SUBMIT}
-            text="Submit"
-          />
-          <Button
             styling="addMovieReset"
             purpose={ButtonType.BUTTON}
             text="Reset"
+          />
+          <Button
+            styling="addMovieSubmit"
+            purpose={ButtonType.SUBMIT}
+            text="Submit"
           />
         </div>
       </div>

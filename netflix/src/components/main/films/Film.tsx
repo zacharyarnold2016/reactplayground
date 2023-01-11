@@ -1,14 +1,20 @@
 import React from "react";
-import { film } from "../../../interfaces/Film.interface";
+import { useDispatch } from "react-redux";
+import { setDetails } from "../../../redux/details";
 
-const Film = (props: film) => {
+const Film = (props: any) => {
+  const dispatch = useDispatch();
   return (
     <div className="filmContainer">
-      <img src={props.img} alt="placeholder" />
+      <img
+        src={props.poster_path}
+        alt="placeholder"
+        onClick={() => dispatch(setDetails(props))}
+      />
       <div className="--details">
-        <h2>{props.name}</h2>
+        <h2>{props.title}</h2>
         <h4>{props.year}</h4>
-        <h3>{props.genre}</h3>
+        <h3>{props.genres[0]}</h3>
       </div>
     </div>
   );

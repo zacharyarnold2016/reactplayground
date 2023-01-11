@@ -3,10 +3,9 @@ body {
   background-color: #424242;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-family: "Noto Sans", sans-serif, "Source Sans Pro", sans-serif;
-}
+  font-family: "Noto Sans", sans-serif, "Source Sans Pro", sans-serif; }
 
-button, .--sec, .addMovieReset, .--addMovie, .--pri, .addMovieSubmit, .--submit {
+button, .--pri, .--submit, .addMovieSubmit, .--sec, .--addMovie, .addMovieReset {
   margin-left: 5px;
   height: 6vh;
   width: 10%;
@@ -17,35 +16,29 @@ button, .--sec, .addMovieReset, .--addMovie, .--pri, .addMovieSubmit, .--submit 
   outline: none;
   text-decoration: none;
   border: none;
-  font-size: x-large;
-}
-button:hover, .--sec:hover, .addMovieReset:hover, .--addMovie:hover, .--pri:hover, .addMovieSubmit:hover, .--submit:hover {
-  color: #ffffff;
-  border: 1px #ffffff;
-  cursor: pointer;
-}
+  font-size: x-large; }
+  button:hover, .--pri:hover, .--submit:hover, .addMovieSubmit:hover, .--sec:hover, .--addMovie:hover, .addMovieReset:hover {
+    color: #ffffff;
+    border: 1px #ffffff;
+    cursor: pointer; }
 
 li {
   list-style: none;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-.--pri, .addMovieSubmit, .--submit {
+.--pri, .--submit, .addMovieSubmit {
   box-sizing: border-box;
   background-color: #f65261;
   height: 5vh;
-  width: 10vw;
-}
+  width: 10vw; }
 
-.--sec, .addMovieReset, .--addMovie {
+.--sec, .--addMovie, .addMovieReset {
   box-sizing: border-box;
-  background-color: transparent;
-}
+  background-color: transparent; }
 
 .--submit {
   left: 85%;
-  top: 50%;
-}
+  top: 50%; }
 
 .--addMovie {
   color: #f65261;
@@ -53,37 +46,30 @@ li {
   border: 0px;
   top: 1vh;
   right: 1vw;
-  border: 1px solid #ffffff;
-}
-.--addMovie:hover {
-  border: 1px solid #f65261;
-  color: #f65261;
-}
+  border: 1px solid #ffffff; }
+  .--addMovie:hover {
+    border: 1px solid #f65261;
+    color: #f65261; }
 
 .addMovieTitle {
   display: inline;
   padding: 5px;
-  color: #f65261;
-}
+  color: #f65261; }
 
 .addMovieSubmit {
-  position: relative;
-}
+  position: relative; }
 
 .addMovieReset {
   position: relative;
-  color: #ffffff;
+  color: #f65261;
   width: 10vw;
   height: 5vh;
-  border: 2px solid #ffffff;
-}
-.addMovieReset :hover {
-  border: 2px solid #f65261;
-}
+  border: 2px solid #f65261; }
+  .addMovieReset :hover {
+    border: 2px solid white; }
 
 .addMovieButtons {
   padding: 5px;
   display: inline;
   position: relative;
-  grid-template-columns: 50% 50%;
-}/*# sourceMappingURL=add.css.map */
+  grid-template-columns: 50% 50%; }

@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Result = (props: any) => {
+  const { results } = useSelector((state: any) => state.film);
   return (
     <div className="searchResults">
-      <h2> {props.results} Results</h2>
+      <h2> {results} Results</h2>
     </div>
   );
 };

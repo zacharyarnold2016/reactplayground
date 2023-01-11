@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import TopBar from "./top/TopBar";
 import VideoBar from "./main/VideoBar";
 import { ErrorBoundary } from "react-error-boundary";
@@ -6,40 +6,19 @@ import ErrorFallback from "./err/ErrorFallback";
 import EditMovie from "./filmInteraction/edit/EditMovie";
 import DeleteMovie from "./filmInteraction/delete/DeleteMovie";
 import Details from "./details/Details";
+import { useSelector } from "react-redux";
 
 const App: React.FC = () => {
-  const [edit, setEdit] = useState(false);
-  const [deleted, setDeleted] = useState(false);
-  const [details, setDetails] = useState(false);
+  const { deleteMovie, editMovie } = useSelector((state: any) => state.forms);
+  const { details } = useSelector((state: any) => state.details);
 
-  const renderEdit = useCallback(() => {
-    setEdit(!edit);
-  }, [edit]);
-  const renderDelete = useCallback(() => {
-    console.log(deleted);
-    setDeleted(!deleted);
-  }, [deleted]);
-  const renderDetails = useCallback(function (film: any) {
-    film ? setDetails(film) : setDetails(false);
-    setDetails(film);
-  }, []);
-
-  const handleContext = {
-    renderEdit,
-    renderDelete,
-    renderDetails,
-  };
   return (
     <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
-        {details ? (
-          <Details callback={renderDetails} details={details} />
-        ) : (
-          <TopBar />
-        )}
-        <VideoBar callback={handleContext} />
-        {edit ? <EditMovie callback={renderEdit} /> : null}
-        {deleted ? <DeleteMovie /> : null}
+        {details ? <Details details={details} /> : <TopBar />}
+        <VideoBar />
+        {editMovie && <EditMovie />}
+        {deleteMovie && <DeleteMovie />}
       </ErrorBoundary>
     </div>
   );

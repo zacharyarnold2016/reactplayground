@@ -11,6 +11,7 @@
 
 .description {
   display: grid;
+  color: $bgColor;
 }
 
 .switchDetails {
@@ -22,7 +23,7 @@
   width: 2vw;
   :hover {
     cursor: pointer;
-    color: $textColor
+    color: $textColor;
   }
 }
 
@@ -33,6 +34,7 @@
 
 .detailsSubtext {
   display: grid;
+  color: $accentColor;
   grid-template-columns: 20% 20%;
 }
 

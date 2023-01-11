@@ -1,26 +1,32 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { closeDetails } from "../../redux/details";
 
 const Details = (props: any) => {
-  const { callback } = props;
-  const bound = callback.bind(this, false);
+  const { details } = props;
+  const dispatch = useDispatch();
+
   return (
     <div className="details">
-      <img src={props.details.img} alt="img" />
-      <div className="description">
-        <div>
-          <div className="detailHead">
-            <h1>{props.details.name}</h1>
-            <h1 className="rating">{props.details.rating}</h1>
-          </div>
-          <div className="detailsSubtext">
-            <h2>{props.details.year}</h2>
-            <h2>{props.details.genre}</h2>
-          </div>
+      <img src={details.poster_path} alt="Placeholder" />
+      <div>
+        <div className="detailHead">
+          <h1>{details.title}</h1>
+          <h2 className="rating">{details.vote_average}</h2>
+          <h5>{details.genres[0]}</h5>
         </div>
-        <h4>{props.details.description}</h4>
+        <div className="detailsSubtext">
+          <h2>{details.release_date}</h2>
+          <h2>{details.runtime}</h2>
+        </div>
+        <br />
+        <h3 className="description">{details.description}</h3>
       </div>
-      <BsSearch onClick={bound} className="switchDetails" />
+      <BsSearch
+        onClick={() => dispatch(closeDetails())}
+        className="switchDetails"
+      />
     </div>
   );
 };

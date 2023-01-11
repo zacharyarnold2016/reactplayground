@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/Button.interface";
 import AddMovie from "../filmInteraction/add/AddMovie";
+import { useSelector, useDispatch } from "react-redux";
+import { renderAdd } from "../../redux/forms";
 
 const TopBar = () => {
-  const [addMovie, setAddMovie] = useState(false);
-  const handleFormState = useCallback(() => {
-    setAddMovie(!addMovie);
-  }, [addMovie]);
+  const { addMovie } = useSelector((state: any) => state.forms);
+  const dispatch = useDispatch();
 
   return (
     <div className="searchContainer">
@@ -18,15 +18,16 @@ const TopBar = () => {
           name="Search"
           placeholder="Search"
         />
+        {/* Make into a Button, remove submit option. requests will be handled through redux !routing */}
         <Button styling="--submit" purpose={ButtonType.SUBMIT} text="Submit" />
       </form>
       <Button
         styling="--addMovie"
         purpose={ButtonType.BUTTON}
         text="+Add Movie"
-        callback={handleFormState}
+        callback={() => dispatch(renderAdd())}
       />
-      {addMovie ? <AddMovie callback={handleFormState} /> : null}
+      {addMovie && <AddMovie />}
       <h2 className="logo">Find Your Movie</h2>
     </div>
   );

@@ -7,9 +7,8 @@ const GenreOption = (props: any) => {
   return (
     <>
       {options.map((element) => {
-        const bound = props.callback.bind(this, element);
         return (
-          <li className="sortOption" onClick={bound} key={element.toString()}>
+          <li className="sortOption" key={element.toString()}>
             {element}
           </li>
         );

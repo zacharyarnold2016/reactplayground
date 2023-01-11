@@ -4,7 +4,7 @@ import GenreOption from "./GenreOption";
 const GenreBar = (props: any) => {
   return (
     <div className="genreBar">
-      <GenreOption callback={props.callback} />
+      <GenreOption />
     </div>
   );
 };

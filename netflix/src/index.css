@@ -255,13 +255,13 @@ li {
 
 .addMovieReset {
   position: relative;
-  color: #ffffff;
+  color: #f65261;
   width: 10vw;
   height: 5vh;
-  border: 2px solid #ffffff;
+  border: 2px solid #f65261;
 }
 .addMovieReset :hover {
-  border: 2px solid #f65261;
+  border: 2px solid white;
 }
 
 .addMovieButtons {
@@ -284,8 +284,8 @@ li {
 .film {
   box-sizing: border-box;
   margin: 2vh;
-  width: 400px;
-  height: auto;
+  width: 500px;
+  height: 900px;
   justify-items: center;
   position: relative;
   list-style: none;
@@ -483,6 +483,7 @@ li {
 
 .description {
   display: grid;
+  color: #424242;
 }
 
 .switchDetails {
@@ -505,6 +506,7 @@ li {
 
 .detailsSubtext {
   display: grid;
+  color: #f65261;
   grid-template-columns: 20% 20%;
 }
 
