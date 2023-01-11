@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../util/Button";
-import { ButtonType } from "../../interfaces/Button.interface";
+import { ButtonType } from "../../interfaces/components/util/Button.interface";
 
 const MovieForm = () => {
   return (

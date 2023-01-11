@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { SORTOPTIONS } from "../../../interfaces/enums/lists.enums";
+import SortByOption from "./SortByOption";
 
 const SortBy = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ const SortBy = () => {
         {open && (
           <ul>
             {options.map((element) => {
-              return <li style={{ padding: "1px" }}>{element}</li>;
+              return <SortByOption option={element} />;
             })}
           </ul>
         )}

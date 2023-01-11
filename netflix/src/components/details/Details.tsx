@@ -1,10 +1,10 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
+import { details } from "../../interfaces/details/Details.interface";
 import { closeDetails } from "../../redux/details";
 
-const Details = (props: any) => {
-  const { details } = props;
+const Details = ({ details }: details) => {
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +21,7 @@ const Details = (props: any) => {
           <h2>{details.runtime}</h2>
         </div>
         <br />
-        <h3 className="description">{details.description}</h3>
+        <h3 className="description">{details.overview}</h3>
       </div>
       <BsSearch
         onClick={() => dispatch(closeDetails())}

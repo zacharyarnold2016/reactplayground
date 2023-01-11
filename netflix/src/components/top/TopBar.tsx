@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "../util/Button";
-import { ButtonType } from "../../interfaces/Button.interface";
+import { ButtonType } from "../../interfaces/components/util/Button.interface";
 import AddMovie from "../filmInteraction/add/AddMovie";
 import { useSelector, useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/forms";
+import { RootState } from "../../redux/store";
 
 const TopBar = () => {
-  const { addMovie } = useSelector((state: any) => state.forms);
+  const { addMovie } = useSelector((state: RootState) => state.forms);
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +20,14 @@ const TopBar = () => {
           placeholder="Search"
         />
         {/* Make into a Button, remove submit option. requests will be handled through redux !routing */}
-        <Button styling="--submit" purpose={ButtonType.SUBMIT} text="Submit" />
+        <Button
+          styling="--submit"
+          purpose={ButtonType.BUTTON}
+          text="Submit"
+          callback={() => {
+            console.log("Search");
+          }}
+        />
       </form>
       <Button
         styling="--addMovie"

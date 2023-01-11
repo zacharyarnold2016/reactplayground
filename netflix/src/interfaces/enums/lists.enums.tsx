@@ -1,7 +1,6 @@
 export enum SORTOPTIONS {
-  ACTOR = "Actor",
-  POPULARITY = "Popularity",
-  RATING = "Rating",
+  RELEASE = "Release Year",
+  RATING = "Vote Average",
 }
 
 export enum GENRES {

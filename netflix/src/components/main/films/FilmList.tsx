@@ -9,8 +9,8 @@ const FilmList = (props: any) => {
   const { data, error, isLoading } = useGetMoviesListQuery("");
   const { films } = useSelector((state: any) => state.film);
   useEffect(() => {
-    isLoading ? console.log(isLoading) : dispatch(setFilms(data.data));
-  }, [isLoading, dispatch]);
+    isLoading ? console.log("Loading") : dispatch(setFilms(data.data));
+  }, [isLoading]);
   return (
     <>
       {isLoading ? (
@@ -20,7 +20,7 @@ const FilmList = (props: any) => {
           <div className="filmsContainer">
             {films.map((film: any) => {
               return (
-                <li key={film.key}>
+                <li key={film.title.toString()}>
                   <MovieCard
                     id={film.id}
                     title={film.title}

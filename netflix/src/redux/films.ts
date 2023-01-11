@@ -5,6 +5,7 @@ export const filmSlice = createSlice({
   initialState: {
     films: [],
     results: 0,
+    currentGenre: "All",
   },
   reducers: {
     setFilms: (state, filmList) => {
@@ -12,8 +13,11 @@ export const filmSlice = createSlice({
       // @ts-ignore
       state.results = state.films.length;
     },
+    setCurrentGenre: (state, genre) => {
+      state.currentGenre = genre.payload;
+    },
   },
 });
 
-export const { setFilms } = filmSlice.actions;
+export const { setFilms, setCurrentGenre } = filmSlice.actions;
 export default filmSlice.reducer;

@@ -10,20 +10,21 @@ export const filmApi = createApi({
     getMoviesList: builder.query({
       query: () => `/movies`,
     }),
-    getSortedList: builder.query({
-      query: (sortType: string = "rating", sortOrder: string = "desc") =>
-        `/movies?sortBy=${sortType}?sortOrder=${sortOrder}`,
-    }),
-    searchMovieByTitle: builder.query({
-      query: (searchQuery: string) =>
-        `/movies?search=${searchQuery}&searchBy=title`,
-    }),
-    searchMovieByGenre: builder.query({
-      query: (genreQuery: string) =>
-        `/movies?search=${genreQuery}&searchBy=genres`,
+    searchMovie: builder.query({
+      query: ({ searchQuery, searchType }) =>
+        `/movies?search=${searchQuery}&searchBy=${searchType}`,
     }),
     filter: builder.query({
-      query: (genre) => `/movies?filter=${genre}`,
+      query: ({ genre, sortBy, sortOrder }) => {
+        console.log(genre, sortBy, sortOrder);
+        if (!sortBy && !sortOrder) {
+          return `/movies?sortBy=vote_average&sortOrder=desc&filter=${genre}`;
+        } else if (!sortOrder) {
+          return `/movies?sortBy=${sortBy}&sortOrder=desc&filter=${genre}`;
+        } else {
+          return `/movies?sortBy=${sortBy}&sortOrder=${sortOrder}&filter=${genre}`;
+        }
+      },
     }),
   }),
 });
@@ -31,8 +32,8 @@ export const filmApi = createApi({
 export const {
   useGetMovieByIdQuery,
   useGetMoviesListQuery,
-  useGetSortedListQuery,
-  useSearchMovieByTitleQuery,
-  useSearchMovieByGenreQuery,
+  useSearchMovieQuery,
   useFilterQuery,
 } = filmApi;
+
+export const filterGenre = filmApi.endpoints.filter.useLazyQuery;

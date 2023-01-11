@@ -5,7 +5,7 @@ import filmSliceReducer from "./films";
 import { filmApi } from "./api";
 
 // @TODO - Add API Reducer
-export default configureStore({
+const store = configureStore({
   reducer: {
     forms: formSliceReducer,
     details: detailsSliceReducer,
@@ -15,3 +15,5 @@ export default configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(filmApi.middleware),
 });
+export type RootState = ReturnType<typeof store.getState>;
+export default store;

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  useFilterQuery,
-  useGetMoviesListQuery,
-  useSearchMovieByGenreQuery,
-  useSearchMovieByTitleQuery,
-} from "../redux/api";
-// import films from "../dummyFilms";
+import { useFilterQuery } from "../redux/api";
 
 const Testing = () => {
   const { data, error, isLoading } = useFilterQuery("Adventure");
