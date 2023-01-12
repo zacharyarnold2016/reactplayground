@@ -1,9 +1,11 @@
 import React from "react";
 
 export interface film {
+  id: number;
   title: string;
-  tagLine: string;
+  tagline: string;
   vote_average: number;
+  vote_count: number;
   release_date: string;
   poster_path: string;
   overview: string;

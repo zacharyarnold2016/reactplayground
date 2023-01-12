@@ -4,13 +4,15 @@ import { useGetMoviesListQuery } from "../../../redux/api";
 import { setFilms } from "../../../redux/films";
 import { useDispatch, useSelector } from "react-redux";
 
-const FilmList = (props: any) => {
+const FilmList = () => {
   const dispatch = useDispatch();
-  const { data, error, isLoading } = useGetMoviesListQuery("");
+  const { data, isLoading } = useGetMoviesListQuery("");
   const { films } = useSelector((state: any) => state.film);
+
   useEffect(() => {
     isLoading ? console.log("Loading") : dispatch(setFilms(data.data));
   }, [isLoading]);
+
   return (
     <>
       {isLoading ? (
@@ -20,11 +22,11 @@ const FilmList = (props: any) => {
           <div className="filmsContainer">
             {films.map((film: any) => {
               return (
-                <li key={film.title.toString()}>
+                <li key={film.id}>
                   <MovieCard
                     id={film.id}
                     title={film.title}
-                    tagLine={film.tagline}
+                    tagline={film.tagline}
                     vote_average={film.vote_average}
                     vote_count={film.vote_count}
                     release_date={film.release_date}
@@ -34,9 +36,6 @@ const FilmList = (props: any) => {
                     revenue={film.revenue}
                     genres={film.genres}
                     runtime={film.runtime}
-                    year={film.year}
-                    rating={film.rating}
-                    description={film.overview}
                   />
                 </li>
               );

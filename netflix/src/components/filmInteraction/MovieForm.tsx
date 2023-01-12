@@ -21,7 +21,12 @@ const MovieForm = () => {
         </div>
         <div className="formElement">
           <label className="formLabel">Rating:</label>
-          <input type="text" name="Rating" className="formInput" />
+          <input
+            type="text"
+            name="Rating"
+            className="formInput"
+            placeholder="7.8"
+          />
         </div>
         <div className="formElement">
           <label className="formLabel">Genre:</label>
@@ -32,7 +37,7 @@ const MovieForm = () => {
           <input type="text" name="RunTime" className="formInput" />
         </div>
         <div className="formElement">
-          <div className="overviewForm">Overview:</div>
+          <div className="formLabel">Overview:</div>
           <input type="text" name="Overview" className="overview" />
         </div>
         <div />

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setDetails } from "../../../redux/details";
+import { imgFallback } from "../../../helpers/imgFallback";
 
 const Film = (props: any) => {
   const dispatch = useDispatch();
@@ -8,8 +9,10 @@ const Film = (props: any) => {
     <div className="filmContainer">
       <img
         src={props.poster_path}
-        alt="placeholder"
         onClick={() => dispatch(setDetails(props))}
+        className="listImage"
+        alt="Failed to find Poster Path"
+        onError={(currentTarget) => imgFallback(currentTarget)}
       />
       <div className="--details">
         <h2>{props.title}</h2>

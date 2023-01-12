@@ -3,13 +3,13 @@ import { filterGenre } from "../../../redux/api";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { setFilms } from "../../../redux/films";
+import { sortString } from "../../../helpers/sortHelperMethods";
+
 const SortByOption = ({ option }: any) => {
   const { currentGenre } = useSelector((state: RootState) => state.film);
   const dispatch = useDispatch();
-  const string = option.toLowerCase();
-  const array = string.split(" ");
-  const finalstring = array.join("_");
-  const [trigger, result] = filterGenre(option);
+  const finalstring = sortString(option);
+  const [trigger] = filterGenre(option);
 
   const sortAll = async () => {
     const payload = await trigger({
@@ -20,9 +20,9 @@ const SortByOption = ({ option }: any) => {
   };
 
   return (
-    <h4 style={{ padding: "1px" }} onClick={sortAll}>
+    <h5 style={{ padding: "1px" }} onClick={sortAll}>
       {option}
-    </h4>
+    </h5>
   );
 };
 

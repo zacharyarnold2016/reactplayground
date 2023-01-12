@@ -1,9 +1,8 @@
 // @ts-nocheck
-import React, { useCallback, useState, useEffect } from "react";
+import React from "react";
 import SortBar from "./sort/SortBar";
 import Result from "./Results";
 import FilmList from "./films/FilmList";
-
 
 const VideoBar = (props) => {
   return (

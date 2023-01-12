@@ -1,18 +1,25 @@
 import React from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/components/util/Button.interface";
-import AddMovie from "../filmInteraction/add/AddMovie";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/forms";
-import { RootState } from "../../redux/store";
+import { search } from "../../redux/api";
+import { setFilms } from "../../redux/films";
 
 const TopBar = () => {
-  const { addMovie } = useSelector((state: RootState) => state.forms);
   const dispatch = useDispatch();
+  const [trigger] = search();
+
+  const handleSearch = async (event: any) => {
+    event.preventDefault();
+    const searchString = event.target[0].value;
+    const searchResults = await trigger(searchString).unwrap();
+    dispatch(setFilms(searchResults.data));
+  };
 
   return (
     <div className="searchContainer">
-      <form>
+      <form onSubmit={handleSearch}>
         <input
           className="searchBar"
           type="text"
@@ -20,14 +27,7 @@ const TopBar = () => {
           placeholder="Search"
         />
         {/* Make into a Button, remove submit option. requests will be handled through redux !routing */}
-        <Button
-          styling="--submit"
-          purpose={ButtonType.BUTTON}
-          text="Submit"
-          callback={() => {
-            console.log("Search");
-          }}
-        />
+        <Button styling="--submit" purpose={ButtonType.SUBMIT} text="Submit" />
       </form>
       <Button
         styling="--addMovie"
@@ -35,7 +35,6 @@ const TopBar = () => {
         text="+Add Movie"
         callback={() => dispatch(renderAdd())}
       />
-      {addMovie && <AddMovie />}
       <h2 className="logo">Find Your Movie</h2>
     </div>
   );

@@ -2,7 +2,7 @@
 
 .addContainer {
   box-sizing: border-box;
-  background-color: $bgColor;
+  background-color: $extra-color;
   height: 80vh;
   width: 80vw;
   top: 10vh;
@@ -30,6 +30,7 @@
   width: 85%;
   padding: 1vh;
   border-radius: 5px;
+  background-color: $bgColor;
 }
 
 .formLabel {
@@ -68,5 +69,5 @@
   display: grid;
   height: 10vh;
   padding: 1vw;
-  margin: 1vh
+  margin: 1vh;
 }

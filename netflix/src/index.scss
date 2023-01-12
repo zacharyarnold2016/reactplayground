@@ -20,8 +20,14 @@
   left: 0;
   color: $textColor;
 }
+
+.blur {
+  filter: blur(10px);
+}
 .overview {
   @extend .formLabel;
+  color: $accentColor;
+  background-color: $bgColor;
   display: grid;
   grid-column: 1 / 2;
   width: 100%;

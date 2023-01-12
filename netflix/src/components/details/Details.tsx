@@ -3,13 +3,18 @@ import { BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { details } from "../../interfaces/details/Details.interface";
 import { closeDetails } from "../../redux/details";
+import { imgFallback } from "../../helpers/imgFallback";
 
 const Details = ({ details }: details) => {
   const dispatch = useDispatch();
 
   return (
     <div className="details">
-      <img src={details.poster_path} alt="Placeholder" />
+      <img
+        src={details.poster_path}
+        alt="Placeholder"
+        onError={(currentTarget) => imgFallback(currentTarget)}
+      />
       <div>
         <div className="detailHead">
           <h1>{details.title}</h1>

@@ -22,6 +22,7 @@
   &:hover {
     cursor: pointer;
   }
+  border-radius: 10px;
 }
 .--details {
   display: grid;
@@ -41,4 +42,9 @@
   }
 
   z-index: 50;
+}
+
+.listImage {
+  height: 70%;
+  width: 100%;
 }

@@ -6,24 +6,29 @@ export const formSlice = createSlice({
     addMovie: false,
     deleteMovie: false,
     editMovie: false,
+    blur: false,
   },
   reducers: {
     renderAdd: (state) => {
+      state.blur = !state.blur;
       state.deleteMovie = false;
       state.editMovie = false;
       state.addMovie = !state.addMovie;
     },
     renderDelete: (state) => {
+      state.blur = !state.blur;
       state.editMovie = false;
       state.addMovie = false;
       state.deleteMovie = !state.deleteMovie;
     },
     renderEdit: (state) => {
+      state.blur = !state.blur;
       state.deleteMovie = false;
       state.addMovie = false;
       state.editMovie = !state.editMovie;
     },
     closeForms: (state) => {
+      state.blur = false;
       state.deleteMovie = false;
       state.editMovie = false;
       state.addMovie = false;

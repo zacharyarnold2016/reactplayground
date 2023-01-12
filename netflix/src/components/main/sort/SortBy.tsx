@@ -16,13 +16,17 @@ const SortBy = () => {
       <h1 style={{ color: "#555555", paddingRight: "5px" }}>Sort By: </h1>
       <div style={{ display: "inline-flex" }}>
         <h1 onClick={handleOpen}>
-          Release Year <AiFillCaretDown />
+          Release Year <AiFillCaretDown className="caret" />
         </h1>
 
         {open && (
           <ul>
             {options.map((element) => {
-              return <SortByOption option={element} />;
+              return (
+                <li key={element.toString()}>
+                  <SortByOption option={element} />
+                </li>
+              );
             })}
           </ul>
         )}

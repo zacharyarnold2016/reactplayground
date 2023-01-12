@@ -1,8 +1,10 @@
 import * as React from "react";
 import ContextMenu from "./ContextMenu";
 import Film from "./Film";
+import { film } from "../../../interfaces/Film.interface";
+import { convertRuntime } from "../../../helpers/convertRuntime";
 
-const MovieCard = (props: any) => {
+const MovieCard = (props: film) => {
   const {
     id,
     title,
@@ -15,16 +17,10 @@ const MovieCard = (props: any) => {
     budget,
     revenue,
     genres,
-    rating,
-    description,
     runtime,
   } = props;
-
-  const hours = Math.round(runtime / 60);
-  const minutes = runtime % 60;
-  const time = `${hours}h${minutes}min`;
-
-  const year = release_date.split("-");
+  const year = release_date.split("-")[0];
+  const time = convertRuntime(runtime as number);
 
   return (
     <div className="film">
@@ -35,14 +31,12 @@ const MovieCard = (props: any) => {
         tagline={tagline}
         vote_average={vote_average}
         vote_count={vote_count}
-        release_date={year[0]}
+        release_date={year}
         poster_path={poster_path}
         overview={overview}
         budget={budget}
         revenue={revenue}
         genres={genres}
-        rating={rating}
-        description={description}
         runtime={time}
       />
     </div>
