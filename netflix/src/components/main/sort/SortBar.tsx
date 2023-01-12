@@ -2,10 +2,10 @@ import React from "react";
 import SortBy from "./SortBy";
 import GenreBar from "./GenreBar";
 
-const SortBar = (props: any) => {
+const SortBar = () => {
   return (
     <div className="sortBar">
-      <GenreBar callback={props.callback} />
+      <GenreBar />
       <SortBy />
     </div>
   );

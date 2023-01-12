@@ -1,0 +1,31 @@
+@import "../variables/variables.scss";
+
+.sortBar {
+  box-sizing: border-box;
+  grid-template-columns: 40% 30% 30%;
+  border-bottom: 4px solid white;
+  margin: 1rem;
+}
+.sortBy {
+  padding-left: 20vw;
+  margin: 1vw;
+  display: inline-flex;
+  grid-template-columns: auto auto;
+}
+.genreBar {
+  box-sizing: border-box;
+  font-size: xx-large;
+  display: inline-flex;
+  justify-content: left;
+  grid-column: span 2;
+  color: $textColor;
+}
+
+.sortOption {
+  bottom: 0;
+  left: 0;
+}
+
+.caret{
+  color: $accentColor;
+}
