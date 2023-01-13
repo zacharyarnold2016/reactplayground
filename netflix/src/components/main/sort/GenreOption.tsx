@@ -14,7 +14,7 @@ const GenreOption = (props: any) => {
     dispatch(setCurrentGenre(genre));
     dispatch(setFilms(payload.data));
   };
-  return <h3 onClick={sortGenre}>{genre}</h3>;
+  return <h4 onClick={sortGenre}>{genre}</h4>;
 };
 
 export default GenreOption;

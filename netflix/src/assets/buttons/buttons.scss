@@ -24,6 +24,7 @@
 .--addMovie {
   @extend .--sec;
   color: $accentColor;
+  opacity: 90%;
   background-color: $extra-color;
   border: 0px;
   top: 1vh;

@@ -18,7 +18,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
-        <div className={blur && "blur"}>
+        <div className={blur ? "blur" : ""}>
           {details ? <Details details={details} /> : <TopBar />}
           <VideoBar />
         </div>
