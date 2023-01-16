@@ -24,7 +24,7 @@ const MovieCard = (props: film) => {
 
   return (
     <div className="film">
-      <ContextMenu />
+      <ContextMenu id={id} />
       <Film
         id={id}
         title={title}

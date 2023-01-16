@@ -2,12 +2,7 @@ import React, { useState, useCallback } from "react";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import Dropdown from "./Dropdown";
 
-/**
- *  This seems like a situation where redux would
- *  be unneccessary.
- */
-
-const ContextMenu = () => {
+const ContextMenu = (props: { id: number }) => {
   const [drop, setDrop] = useState(false);
 
   const handleDrop = useCallback(() => {
@@ -17,7 +12,7 @@ const ContextMenu = () => {
   return (
     <>
       <AiOutlineDownCircle className="context" onClick={handleDrop} />
-      {drop && <Dropdown />}
+      {drop && <Dropdown id={props.id} />}
     </>
   );
 };

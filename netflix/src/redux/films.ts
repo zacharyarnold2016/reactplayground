@@ -6,6 +6,7 @@ export const filmSlice = createSlice({
     films: [],
     results: 0,
     currentGenre: "All",
+    active: false,
   },
   reducers: {
     setFilms: (state, filmList) => {

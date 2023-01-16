@@ -36,6 +36,13 @@ export const filmApi = createApi({
         }
       },
     }),
+
+    deleteMovie: builder.mutation({
+      query: (id) => ({
+        url: `/movies/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
@@ -44,6 +51,7 @@ export const {
   useGetMoviesListQuery,
   useSearchMovieQuery,
   useFilterQuery,
+  useDeleteMovieMutation,
 } = filmApi;
 
 export const filterGenre = filmApi.endpoints.filter.useLazyQuery;
