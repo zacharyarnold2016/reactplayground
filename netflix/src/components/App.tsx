@@ -10,21 +10,19 @@ import Details from "./details/Details";
 import { useSelector } from "react-redux";
 
 const App: React.FC = () => {
-  const { deleteMovie, editMovie, addMovie, blur } = useSelector(
-    (state: any) => state.forms
-  );
+  const { form } = useSelector((state: any) => state.forms);
   const { details } = useSelector((state: any) => state.details);
 
   return (
     <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
-        <div className={blur ? "blur" : ""}>
+        <div className={form ? "blur" : ""}>
           {details ? <Details details={details} /> : <TopBar />}
           <VideoBar />
         </div>
-        {addMovie && <AddMovie />}
-        {editMovie && <EditMovie />}
-        {deleteMovie && <DeleteMovie />}
+        {form === "add" && <AddMovie />}
+        {form === "edit" && <EditMovie />}
+        {form === "delete" && <DeleteMovie />}
       </ErrorBoundary>
     </div>
   );

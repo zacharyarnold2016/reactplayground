@@ -2,7 +2,7 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { details } from "../../interfaces/details/Details.interface";
-import { closeDetails } from "../../redux/details";
+import { closeDetails } from "../../redux/films/details";
 import { imgFallback } from "../../helpers/imgFallback";
 
 const Details = ({ details }: details) => {

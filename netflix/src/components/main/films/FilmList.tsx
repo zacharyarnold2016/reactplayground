@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import MovieCard from "./MovieCard";
-import { useGetMoviesListQuery } from "../../../redux/api";
-import { setFilms } from "../../../redux/films";
-import { useDispatch, useSelector } from "react-redux";
+import { useGetMoviesListQuery } from "../../../redux/films/api";
+import { setFilms, setResults } from "../../../redux/films/films";
+import { batch, useDispatch, useSelector } from "react-redux";
 
 const FilmList = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,12 @@ const FilmList = () => {
   const { films } = useSelector((state: any) => state.film);
 
   useEffect(() => {
-    isLoading ? console.log("Loading") : dispatch(setFilms(data.data));
+    isLoading
+      ? console.log("Loading")
+      : batch(() => {
+          dispatch(setResults(data.totalAmount));
+          dispatch(setFilms(data.data));
+        });
   }, [isLoading]);
 
   return (

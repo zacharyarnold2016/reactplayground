@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setDetails } from "../../../redux/details";
+import { setDetails } from "../../../redux/films/details";
 import { imgFallback } from "../../../helpers/imgFallback";
 
 const Film = (props: any) => {

@@ -1,8 +1,8 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import formSliceReducer from "./forms";
-import detailsSliceReducer from "./details";
-import filmSliceReducer from "./films";
-import { filmApi } from "./api";
+import formSliceReducer from "./films/forms";
+import detailsSliceReducer from "./films/details";
+import filmSliceReducer from "./films/films";
+import { filmApi } from "./films/api";
 
 // @TODO - Add API Reducer
 const store = configureStore({

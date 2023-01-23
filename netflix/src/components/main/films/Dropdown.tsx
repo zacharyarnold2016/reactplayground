@@ -1,21 +1,25 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { renderEdit, renderDelete } from "../../../redux/forms";
+import { renderEdit, renderDelete } from "../../../redux/films/forms";
 
-const Dropdown = (props: { id: number }) => {
+const Dropdown = ({ id }: { id: number }) => {
   const dispatch = useDispatch();
 
   return (
     <div className="dropdown">
       <h2
         className="dropdownOption"
-        onClick={() => dispatch(renderEdit(props.id))}
+        onClick={() => {
+          dispatch(renderEdit(id));
+        }}
       >
         Edit
       </h2>
       <h2
         className="dropdownOption"
-        onClick={() => dispatch(renderDelete(props.id))}
+        onClick={() => {
+          dispatch(renderDelete(id));
+        }}
       >
         Delete
       </h2>

@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/components/util/Button.interface";
-import { useDispatch } from "react-redux";
-import { renderAdd } from "../../redux/forms";
-import { search } from "../../redux/api";
-import { setFilms } from "../../redux/films";
+import { batch, useDispatch, useSelector } from "react-redux";
+import { renderAdd } from "../../redux/films/forms";
+import { filter } from "../../redux/films/api";
+import { setFilms, setResults, setSearch } from "../../redux/films/films";
+import { useSearchState } from "../../hooks/useSearchState";
+import { selectStatus } from "../../redux/selectors/films";
 
 const TopBar = () => {
+  const getQueryString = useSearchState();
+  const searchState = useSelector(selectStatus);
   const dispatch = useDispatch();
-  const [trigger] = search();
+  const [trigger] = filter();
 
-  const handleSearch = async (event: any) => {
-    event.preventDefault();
-    const searchString = event.target[0].value;
-    const searchResults = await trigger(searchString).unwrap();
-    dispatch(setFilms(searchResults.data));
-  };
+  const handleSearch = useCallback(
+    async (event: any) => {
+      event.preventDefault();
+      const searchString = event.target[0].value;
+      const queryString = getQueryString({
+        currentGenre: searchState.currentGenre,
+        currentSort: searchState.currentSort,
+        currentSearch: searchString,
+      });
+      const searchResults = await trigger(queryString).unwrap();
+      batch(() => {
+        dispatch(setSearch(searchString));
+        dispatch(setFilms(searchResults.data));
+        dispatch(setResults(searchResults.totalAmount));
+      });
+    },
+    [trigger, dispatch, getQueryString, searchState]
+  );
 
   return (
     <div className="searchContainer">

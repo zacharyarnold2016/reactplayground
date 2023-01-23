@@ -1,22 +1,31 @@
 import * as React from "react";
-import { filterGenre } from "../../../redux/api";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../redux/store";
-import { setFilms } from "../../../redux/films";
+import { filter } from "../../../redux/films/api";
+import { useSelector, useDispatch, batch } from "react-redux";
+import { setCurrentSort, setFilms } from "../../../redux/films/films";
 import { sortString } from "../../../helpers/sortHelperMethods";
+import { selectStatus } from "../../../redux/selectors/films";
+import { useSearchState } from "../../../hooks/useSearchState";
 
 const SortByOption = ({ option }: any) => {
-  const { currentGenre } = useSelector((state: RootState) => state.film);
   const dispatch = useDispatch();
-  const finalstring = sortString(option);
-  const [trigger] = filterGenre(option);
+  const searchState = useSelector(selectStatus);
+  const getQueryString = useSearchState();
+  const finalstring: string = sortString(option);
+  const [trigger] = filter(option);
 
   const sortAll = async () => {
-    const payload = await trigger({
-      genre: currentGenre,
-      sortBy: finalstring,
-    }).unwrap();
-    dispatch(setFilms(payload.data));
+    const queryString = getQueryString({
+      currentGenre: searchState.currentGenre,
+      currentSort: finalstring,
+      currentSearch: searchState.currentSearch,
+    });
+    const payload = await trigger(queryString).unwrap();
+    console.log(payload);
+    const options = { finalstring, option };
+    batch(() => {
+      dispatch(setCurrentSort(options));
+      dispatch(setFilms(payload.data));
+    });
   };
 
   return (

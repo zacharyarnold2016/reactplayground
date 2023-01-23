@@ -1,5 +1,5 @@
 export enum SORTOPTIONS {
-  RELEASE = "Release Year",
+  RELEASE = "Release Date",
   RATING = "Vote Average",
 }
 

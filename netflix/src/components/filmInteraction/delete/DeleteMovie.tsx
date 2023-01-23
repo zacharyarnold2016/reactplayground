@@ -2,9 +2,9 @@ import React from "react";
 import Button from "../../util/Button";
 import { ButtonType } from "../../../interfaces/components/util/Button.interface";
 import { useDispatch, useSelector } from "react-redux";
-import { closeForms, resetId } from "../../../redux/forms";
+import { closeForms, resetId } from "../../../redux/films/forms";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { useDeleteMovieMutation } from "../../../redux/api";
+import { useDeleteMovieMutation } from "../../../redux/films/api";
 
 const DeleteMovie = () => {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/components/util/Button.interface";
-import { closeForms } from "../../redux/forms";
+import { closeForms } from "../../redux/films/forms";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 const MovieForm = (props: any) => {
