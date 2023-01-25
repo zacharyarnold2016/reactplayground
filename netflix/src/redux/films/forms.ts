@@ -4,7 +4,7 @@ export const formSlice = createSlice({
   name: "forms",
   initialState: {
     form: undefined as any,
-    id: 0,
+    id: undefined as any,
   },
   reducers: {
     renderAdd: (state) => {
@@ -23,7 +23,7 @@ export const formSlice = createSlice({
       state.form = undefined;
     },
     resetId: (state) => {
-      state.id = 0;
+      state.id = undefined;
     },
   },
 });

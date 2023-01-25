@@ -17,8 +17,8 @@ const DeleteMovie = () => {
     console.log(id);
     await updatePost(id);
     dispatch(closeForms());
-    refresh();
     dispatch(resetId());
+    refresh();
   };
 
   console.log(id);
