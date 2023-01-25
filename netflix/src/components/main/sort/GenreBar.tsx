@@ -1,33 +1,18 @@
 import React from "react";
+import GenreOption from "./GenreOption";
+import { GENRES } from "../../../interfaces/enums/lists.enums";
 
 const GenreBar = (props: any) => {
-  const sortOptions = props.callback;
-  const action = sortOptions.sortAction;
-  const drama = sortOptions.sortDrama;
-  const comedy = sortOptions.sortComedy;
-  const horror = sortOptions.sortHorror;
-  const documentary = sortOptions.sortDocumentary;
-  const resetList = sortOptions.sortReset;
+  const options = Object.values(GENRES);
   return (
     <div className="genreBar">
-      <h1 onClick={resetList} className="sortOption">
-        All
-      </h1>
-      <h1 onClick={action} className="sortOption">
-        Action
-      </h1>
-      <h1 onClick={drama} className="sortOption">
-        Drama
-      </h1>
-      <h1 onClick={comedy} className="sortOption">
-        Comedy
-      </h1>
-      <h1 onClick={horror} className="sortOption">
-        Horror
-      </h1>
-      <h1 onClick={documentary} className="sortOption">
-        Documentary
-      </h1>
+      {options.map((genre) => {
+        return (
+          <li className="sortOption" key={genre.toString()}>
+            <GenreOption genre={genre} />
+          </li>
+        );
+      })}
     </div>
   );
 };

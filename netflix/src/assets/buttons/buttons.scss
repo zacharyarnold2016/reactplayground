@@ -1,0 +1,38 @@
+@import "../variables/variables.scss";
+@import "../core/core.scss";
+
+.--pri {
+  @extend button;
+  box-sizing: border-box;
+  background-color: $accentColor;
+  height: 5vh;
+  width: 10vw;
+}
+
+.--sec {
+  @extend button;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.--submit {
+  @extend .--pri;
+  left: 85%;
+  top: 50%;
+}
+
+.--addMovie {
+  @extend .--sec;
+  color: $accentColor;
+  opacity: 90%;
+  background-color: $extra-color;
+  border: 0px;
+  top: 1vh;
+  right: 1vw;
+  border: 1px solid $textColor;
+
+  &:hover {
+    border: 1px solid $accentColor;
+    color: $accentColor;
+  }
+}

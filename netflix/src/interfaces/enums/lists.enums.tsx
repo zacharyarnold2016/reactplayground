@@ -1,5 +1,13 @@
 export enum SORTOPTIONS {
-  ACTOR = "Actor",
-  POPULARITY = "Popularity",
-  RATING = "Rating",
+  RELEASE = "Release Date",
+  RATING = "Vote Average",
+}
+
+export enum GENRES {
+  ALL = "All",
+  ACTION = "Action",
+  DRAMA = "Drama",
+  COMEDY = "Comedy",
+  HORROR = "Horror",
+  DOCUMENTARY = "Documentary",
 }

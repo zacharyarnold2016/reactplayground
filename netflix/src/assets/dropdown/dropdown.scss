@@ -1,0 +1,18 @@
+@import "../variables/variables.scss";
+
+.dropdown {
+  box-sizing: border-box;
+  position: absolute;
+  display: grid;
+  background-color: $bgColor;
+  opacity: 95%;
+  width: 100%;
+}
+.dropdownOption {
+  &:hover {
+    height: 100%;
+    width: 100%;
+    background: #f65261;
+    color: #232323;
+  }
+}
