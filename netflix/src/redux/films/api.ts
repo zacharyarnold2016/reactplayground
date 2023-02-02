@@ -25,6 +25,24 @@ export const filmApi = createApi({
         method: "DELETE",
       }),
     }),
+
+    editMovie: builder.mutation({
+      query: (patch) => ({
+        url: `/movies`,
+        method: "PUT",
+        body: patch,
+      }),
+    }),
+
+    addMovie: builder.mutation({
+      query: (patch) => {
+        return {
+          url: `/movies`,
+          method: "POST",
+          body: patch,
+        };
+      },
+    }),
   }),
 });
 
@@ -33,6 +51,8 @@ export const {
   useGetMoviesListQuery,
   useFilterQuery,
   useDeleteMovieMutation,
+  useAddMovieMutation,
+  useEditMovieMutation,
 } = filmApi;
 
 export const filter = filmApi.endpoints.filter.useLazyQuery;
