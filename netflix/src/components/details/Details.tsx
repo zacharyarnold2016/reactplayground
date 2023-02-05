@@ -1,14 +1,11 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { details } from "../../interfaces/details/Details.interface";
-import { closeDetails } from "../../redux/films/details";
 import { imgFallback } from "../../helpers/imgFallback";
 import { useSearchParams } from "react-router-dom";
 
-const Details = ({ details }: any) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const dispatch = useDispatch();
+const Details = ({ details, callback }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div className="details">
@@ -30,7 +27,13 @@ const Details = ({ details }: any) => {
         <br />
         <h3 className="description">{details.overview}</h3>
       </div>
-      <BsSearch onClick={() => setSearchParams()} className="switchDetails" />
+      <BsSearch
+        onClick={() => {
+          callback(undefined);
+          setSearchParams();
+        }}
+        className="switchDetails"
+      />
     </div>
   );
 };

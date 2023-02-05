@@ -4,12 +4,12 @@ import SortBar from "./sort/SortBar";
 import Result from "./Results";
 import FilmList from "./films/FilmList";
 
-const VideoBar = () => {
+const VideoBar = (props: any) => {
   return (
     <div className="mainContainer">
       <SortBar />
       <Result />
-      <FilmList />
+      <FilmList callback={props.callback} />
     </div>
   );
 };

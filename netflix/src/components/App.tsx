@@ -8,8 +8,6 @@ import DeleteMovie from "./filmInteraction/delete/DeleteMovie";
 import AddMovie from "./filmInteraction/add/AddMovie";
 import Details from "./details/Details";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { BsCheckLg } from "react-icons/bs";
 import { useSearchParams } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -35,8 +33,12 @@ const App: React.FC = () => {
     <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
         <div className={form ? "blur" : ""}>
-          {details ? <Details details={details} /> : <TopBar />}
-          <VideoBar />
+          {details ? (
+            <Details details={details} callback={setDetails} />
+          ) : (
+            <TopBar />
+          )}
+          <VideoBar callback={setDetails} />
         </div>
         {form === "add" && <AddMovie />}
         {form === "edit" && <EditMovie />}

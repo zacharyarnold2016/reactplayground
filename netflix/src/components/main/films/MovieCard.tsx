@@ -4,7 +4,7 @@ import Film from "./Film";
 import { film } from "../../../interfaces/Film.interface";
 import { convertRuntime } from "../../../helpers/convertRuntime";
 
-const MovieCard = (props: film) => {
+const MovieCard = (props: any) => {
   const year = props.release_date.split("-")[0];
   const time = convertRuntime(props.runtime as number);
 
@@ -24,6 +24,7 @@ const MovieCard = (props: film) => {
         revenue={props.revenue}
         genres={props.genres}
         runtime={time}
+        callback={props.callback}
       />
     </div>
   );

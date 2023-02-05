@@ -7,12 +7,13 @@ import { useSearchParams } from "react-router-dom";
 const Film = (props: any) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const dispatch = useDispatch();
   return (
     <div className="filmContainer">
       <img
         src={props.poster_path}
-        onClick={() => setSearchParams({ movieId: props.id })}
+        onClick={() => {
+          setSearchParams({ movieId: props.id });
+        }}
         className="listImage"
         alt="Failed to find Poster Path"
         onError={(currentTarget) => imgFallback(currentTarget)}

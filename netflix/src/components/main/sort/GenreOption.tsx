@@ -8,7 +8,6 @@ const GenreOption = (props: any) => {
   const genre = props.genre.toString();
 
   const isSelect = useCallback(() => {
-    console.log(searchState);
     if (props.genre === searchState.genre) {
       return "highlighted";
     }

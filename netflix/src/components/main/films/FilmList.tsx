@@ -4,7 +4,7 @@ import { setFilms } from "../../../redux/films/films";
 import { useDispatch, useSelector } from "react-redux";
 import { useLoaderData } from "react-router";
 
-const FilmList = () => {
+const FilmList = (props: any) => {
   const rawFilm: any = useLoaderData();
   const dispatch = useDispatch();
   const { films } = useSelector((state: any) => state.film);
@@ -30,6 +30,7 @@ const FilmList = () => {
                   revenue={film.revenue}
                   genres={film.genres}
                   runtime={film.runtime}
+                  callback={props.callback}
                 />
               </li>
             );
