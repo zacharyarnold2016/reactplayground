@@ -1,31 +1,19 @@
-import * as React from "react";
-import { filter } from "../../../redux/films/api";
-import { useSelector, useDispatch, batch } from "react-redux";
-import { setCurrentSort, setFilms } from "../../../redux/films/films";
+import React from "react";
 import { sortString } from "../../../helpers/sortHelperMethods";
-import { selectStatus } from "../../../redux/selectors/films";
-import { useSearchState } from "../../../hooks/useSearchState";
+import { useNavigate, useParams } from "react-router";
+import generateUrl from "../../../helpers/generateUrlString";
 
 const SortByOption = ({ option }: any) => {
-  const dispatch = useDispatch();
-  const searchState = useSelector(selectStatus);
-  const getQueryString = useSearchState();
+  const searchState = useParams();
   const finalstring: string = sortString(option);
-  const [trigger] = filter(option);
+  const navigate = useNavigate();
 
   const sortAll = async () => {
-    const queryString = getQueryString({
-      currentGenre: searchState.currentGenre,
-      currentSort: finalstring,
-      currentSearch: searchState.currentSearch,
-    });
-    const payload = await trigger(queryString).unwrap();
-    console.log(payload);
-    const options = { finalstring, option };
-    batch(() => {
-      dispatch(setCurrentSort(options));
-      dispatch(setFilms(payload.data));
-    });
+    const { genre, searchQuery } = searchState;
+    const newSearchState = { genre, searchQuery, sortBy: finalstring };
+    const url = generateUrl(newSearchState);
+
+    navigate(url);
   };
 
   return (

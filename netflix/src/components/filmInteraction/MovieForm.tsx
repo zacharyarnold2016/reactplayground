@@ -17,7 +17,7 @@ const MovieForm = (props: any) => {
   const dispatch = useDispatch();
   const { id } = useSelector((state: any) => state.forms);
   const initialValues = {
-    title: "",
+    title: "" ,
     release_date: "",
     poster_path: "",
     vote_average: "",
@@ -40,7 +40,7 @@ const MovieForm = (props: any) => {
       actions: any
     ) => {
       const genreArray: string[] = genres.split(" ");
-      const runtimeNum = parseInt(runtime);
+      const runtimeAsNumber: number = parseInt(runtime);
       const voteNum = parseInt(vote_average);
       const film = {
         title,
@@ -48,7 +48,7 @@ const MovieForm = (props: any) => {
         poster_path,
         vote_average: voteNum,
         genres: genreArray,
-        runtime: runtimeNum,
+        runtime: runtimeAsNumber,
         overview,
         id,
       };

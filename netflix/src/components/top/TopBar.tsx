@@ -1,36 +1,30 @@
 import React, { useCallback } from "react";
 import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/components/util/Button.interface";
-import { batch, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/films/forms";
-import { filter } from "../../redux/films/api";
-import { setFilms, setResults, setSearch } from "../../redux/films/films";
-import { useSearchState } from "../../hooks/useSearchState";
-import { selectStatus } from "../../redux/selectors/films";
+import generateUrl from "../../helpers/generateUrlString";
+import { useNavigate, useParams } from "react-router-dom";
 
 const TopBar = () => {
-  const getQueryString = useSearchState();
-  const searchState = useSelector(selectStatus);
   const dispatch = useDispatch();
-  const [trigger] = filter();
+  const navigate = useNavigate();
+  const searchState = useParams();
 
   const handleSearch = useCallback(
     async (event: any) => {
       event.preventDefault();
       const searchString = event.target[0].value;
-      const queryString = getQueryString({
-        currentGenre: searchState.currentGenre,
-        currentSort: searchState.currentSort,
-        currentSearch: searchString,
-      });
-      const searchResults = await trigger(queryString).unwrap();
-      batch(() => {
-        dispatch(setSearch(searchString));
-        dispatch(setFilms(searchResults.data));
-        dispatch(setResults(searchResults.totalAmount));
-      });
+      const { genre, sortBy } = searchState;
+      const newSearchState = {
+        genre,
+        sortBy,
+        searchQuery: searchString,
+      };
+      const url = generateUrl(newSearchState);
+      navigate(url);
     },
-    [trigger, dispatch, getQueryString, searchState]
+    [navigate]
   );
 
   return (

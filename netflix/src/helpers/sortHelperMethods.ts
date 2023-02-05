@@ -1,6 +1,6 @@
 export const sortString = (sortOption: string) => {
-  const string = sortOption.toLowerCase();
-  const array = string.split(" ");
-  const finalstring = array.join("_");
-  return finalstring;
+  const inputString = sortOption.toLowerCase();
+  const array = inputString.split(" ");
+  const outputString = array.join("_");
+  return outputString;
 };

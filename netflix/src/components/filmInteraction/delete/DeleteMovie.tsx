@@ -9,13 +9,13 @@ import { useDeleteMovieMutation } from "../../../redux/films/api";
 const DeleteMovie = () => {
   const dispatch = useDispatch();
   const { id } = useSelector((state: any) => state.forms);
-  const [updatePost] = useDeleteMovieMutation();
+  const [deleteMutation] = useDeleteMovieMutation();
   const refresh = () => {
     window.location.reload();
   };
   const deleteMovie = async () => {
     console.log(id);
-    await updatePost(id);
+    await deleteMutation(id);
     dispatch(closeForms());
     dispatch(resetId());
     refresh();
