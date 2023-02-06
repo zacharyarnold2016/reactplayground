@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 const Details = ({ details, callback }: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_searchParams, setSearchParams] = useSearchParams();
+  const setDetails = callback;
 
   return (
     <div className="details">
@@ -29,7 +30,7 @@ const Details = ({ details, callback }: any) => {
       </div>
       <BsSearch
         onClick={() => {
-          callback(undefined);
+          setDetails(undefined);
           setSearchParams();
         }}
         className="switchDetails"
