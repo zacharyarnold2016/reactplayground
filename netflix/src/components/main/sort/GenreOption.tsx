@@ -1,21 +1,24 @@
 import React, { useCallback } from "react";
 import { useNavigate, useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import generateUrl from "../../../helpers/generateUrlString";
 
 const GenreOption = (props: any) => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const searchState = useParams();
   const genre = props.genre.toString();
 
   const isSelect = useCallback(() => {
-    if (props.genre === searchState.genre) {
+    if (props.genre === searchParams.get("genre")) {
       return "highlighted";
     }
-  }, [searchState.genre, props.genre]);
+  }, [searchParams.get("genre"), props.genre]);
 
   const sortGenre = useCallback(async () => {
-    if (genre !== searchState.genre) {
-      const { sortBy, searchQuery } = searchState;
+    if (genre !== searchParams.get("genre")) {
+      const { searchQuery } = searchState;
+      const sortBy = searchParams.get("sortBy");
       const newSearchState = {
         sortBy,
         searchQuery,
@@ -24,8 +27,7 @@ const GenreOption = (props: any) => {
       const url = generateUrl(newSearchState);
       navigate(url);
     }
-    console.log(searchState);
-  }, [genre, navigate, searchState]);
+  }, [genre, navigate, searchParams]);
   return (
     <h4 className={isSelect()} onClick={sortGenre}>
       {genre}

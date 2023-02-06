@@ -17,7 +17,7 @@ const MovieForm = (props: any) => {
   const dispatch = useDispatch();
   const { id } = useSelector((state: any) => state.forms);
   const initialValues = {
-    title: "" ,
+    title: "",
     release_date: "",
     poster_path: "",
     vote_average: "",
@@ -25,7 +25,6 @@ const MovieForm = (props: any) => {
     runtime: "",
     overview: "",
   };
-  console.log(props.type);
   const update = useCallback(
     async (
       {

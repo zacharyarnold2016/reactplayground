@@ -5,20 +5,9 @@ import App from "../components/App";
 
 export const router = createBrowserRouter([
   {
-    path: "/search/:searchQuery?/:genre?/:sortBy?/",
+    path: "/search/:searchQuery?",
     element: <App />,
     loader: appLoader,
-  },
-  {
-    path: "/?movieId",
-    element: <App />,
-    loader: async ({ params, request }) => {
-      console.log(request, params);
-      const { movieId } = params;
-      const response = await fetch(`http://localhost:4000/movies/${movieId}`);
-      const data = response.json();
-      return data;
-    },
   },
   {
     path: "/",

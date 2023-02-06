@@ -9,26 +9,24 @@ import AddMovie from "./filmInteraction/add/AddMovie";
 import Details from "./details/Details";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { fetchDetails } from "../helpers/fetchDetails";
 
 const App: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [searchParams, _setSearchParams] = useSearchParams();
   const { form } = useSelector((state: any) => state.forms);
-  const [searchParams, setSearchParams] = useSearchParams();
   const movieId = searchParams.get("movieId");
   const [details, setDetails] = useState(undefined);
 
-  const fetchDetails = useCallback(async () => {
-    if (movieId !== undefined) {
-      const details = await fetch(`http://localhost:4000/movies/${movieId}`);
-      const jsonDetails = await details.json();
-      setDetails(jsonDetails);
-    } else {
-      setDetails(undefined);
-    }
-  }, [movieId]);
+  const fetch = useCallback(
+    () => fetchDetails({ movieId, setDetails }),
+    [movieId]
+  );
 
   useEffect(() => {
-    fetchDetails();
-  }, [movieId, fetchDetails]);
+    fetch();
+  }, [movieId, fetch]);
+
   return (
     <div className="App">
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>

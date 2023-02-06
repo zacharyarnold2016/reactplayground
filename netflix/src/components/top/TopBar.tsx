@@ -4,12 +4,14 @@ import { ButtonType } from "../../interfaces/components/util/Button.interface";
 import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/films/forms";
 import generateUrl from "../../helpers/generateUrlString";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { BsCheckLg } from "react-icons/bs";
 
 const TopBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const searchState = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSearch = useCallback(
     async (event: any) => {

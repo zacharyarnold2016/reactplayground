@@ -1,14 +1,11 @@
-const generateUrl = ({
-  sortBy = "vote_average",
-  searchQuery = "f08ab2",
-  genre = "All",
-}: any) => {
+const generateUrl = ({ sortBy, searchQuery, genre = "All" }: any) => {
+  const queryParams = new URLSearchParams();
   let url = `/search`;
-  url = url + `/` + searchQuery;
-  url = url + "/" + genre;
-  url = url + "/" + sortBy;
-  console.log(url);
-  return url;
+  searchQuery && (url = url + `/` + searchQuery);
+  genre && queryParams.append("genre", genre);
+  sortBy && queryParams.append("sortBy", sortBy);
+  const returnString = `${url}?${queryParams.toString()}`;
+  return returnString;
 };
 
 export default generateUrl;

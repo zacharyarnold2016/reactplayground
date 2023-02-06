@@ -2,17 +2,24 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setDetails } from "../../../redux/films/details";
 import { imgFallback } from "../../../helpers/imgFallback";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import generateUrl from "../../../helpers/generateUrlString";
 
 const Film = (props: any) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const sortBy = searchParams.get("sortBy") as string;
+  const searchQuery = searchParams.get("searchQuery") as string;
+  const genre = searchParams.get("genre");
+
+  const navigate = useNavigate();
 
   return (
     <div className="filmContainer">
       <img
         src={props.poster_path}
         onClick={() => {
-          setSearchParams({ movieId: props.id });
+          const params = { sortBy, searchQuery, movieId: props.id };
+          setSearchParams(params);
         }}
         className="listImage"
         alt="Failed to find Poster Path"
