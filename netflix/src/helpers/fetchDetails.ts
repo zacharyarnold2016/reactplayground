@@ -4,6 +4,7 @@ export const fetchDetails = async (state: any) => {
       `http://localhost:4000/movies/${state.movieId}`
     );
     const jsonDetails = await details.json();
+    console.log(jsonDetails);
     state.setDetails(jsonDetails);
   } else {
     state.setDetails(undefined);
