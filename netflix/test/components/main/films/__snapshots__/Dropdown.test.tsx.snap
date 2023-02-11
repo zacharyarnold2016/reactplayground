@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown Snapshot Test 1`] = `
+<div
+  className="dropdown"
+>
+  <h2
+    className="dropdownOption"
+    onClick={[Function]}
+  >
+    Edit
+  </h2>
+  <h2
+    className="dropdownOption"
+    onClick={[Function]}
+  >
+    Delete
+  </h2>
+</div>
+`;

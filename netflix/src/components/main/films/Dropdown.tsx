@@ -4,6 +4,7 @@ import { renderEdit, renderDelete } from "../../../redux/films/forms";
 
 const Dropdown = ({ id }: { id: number }) => {
   const dispatch = useDispatch();
+  console.log(dispatch);
 
   return (
     <div className="dropdown">

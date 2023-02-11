@@ -5,7 +5,7 @@ describe("Search Redirects", () => {
     cy.get("input").type("star");
     cy.get(".--submit").click();
     cy.url().should("eq", "http://localhost:3000/search/star?genre=All");
-    cy.get(".film:first").click();
+    cy.get(".film:first").click(); 
     cy.url().should(
       "eq",
       "http://localhost:3000/search/star?sortBy=null&searchQuery=null&movieId=181808"
