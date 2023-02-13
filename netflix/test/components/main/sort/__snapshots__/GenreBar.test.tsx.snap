@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreBar SnapShot 1`] = `
+<div
+  className="genreBar"
+>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      All
+    </h4>
+  </li>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      Action
+    </h4>
+  </li>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      Drama
+    </h4>
+  </li>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      Comedy
+    </h4>
+  </li>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      Horror
+    </h4>
+  </li>
+  <li
+    className="sortOption"
+  >
+    <h4
+      onClick={[Function]}
+    >
+      Documentary
+    </h4>
+  </li>
+</div>
+`;

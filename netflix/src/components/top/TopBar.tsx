@@ -23,6 +23,7 @@ const TopBar = () => {
         searchQuery: searchString,
       };
       const url = generateUrl(newSearchState);
+      console.log("Here");
       navigate(url);
     },
     [navigate]

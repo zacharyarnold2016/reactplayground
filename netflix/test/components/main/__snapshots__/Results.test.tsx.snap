@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result Snapshot 1`] = `
+<div
+  className="searchResults"
+>
+  <h2>
+     
+     movie found
+  </h2>
+</div>
+`;

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortBy Snapshot Test 1`] = `
+<div
+  className="sortBy"
+>
+  <h1
+    style={
+      Object {
+        "color": "#555555",
+        "paddingRight": "5px",
+      }
+    }
+  >
+    Sort By: 
+  </h1>
+  <div
+    style={
+      Object {
+        "display": "inline-flex",
+      }
+    }
+  >
+    <h1
+      onClick={[Function]}
+    >
+       
+      <svg
+        className="caret"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"
+        />
+      </svg>
+    </h1>
+    <ul>
+      <li>
+        <h5
+          onClick={[Function]}
+          style={
+            Object {
+              "padding": "1px",
+            }
+          }
+        >
+          Release Date
+        </h5>
+      </li>
+      <li>
+        <h5
+          onClick={[Function]}
+          style={
+            Object {
+              "padding": "1px",
+            }
+          }
+        >
+          Vote Average
+        </h5>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
