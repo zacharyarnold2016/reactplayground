@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmList Snapshot 1`] = `
+<ul>
+  <div
+    className="filmsContainer"
+  >
+    <li
+      className="centered"
+    >
+      <div
+        className="film"
+      >
+        <svg
+          className="context"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 1024 1024"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M690 405h-46.9c-10.2 0-19.9 4.9-25.9 13.2L512 563.6 406.8 418.2c-6-8.3-15.6-13.2-25.9-13.2H334c-6.5 0-10.3 7.4-6.5 12.7l178 246c3.2 4.4 9.7 4.4 12.9 0l178-246c3.9-5.3.1-12.7-6.4-12.7z"
+          />
+          <path
+            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+          />
+        </svg>
+        <div
+          className="filmContainer"
+        >
+          <img
+            alt="Failed to find Poster Path"
+            className="listImage"
+            onClick={[Function]}
+            onError={[Function]}
+            src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
+          />
+          <div
+            className="--details"
+          >
+            <h2>
+              Zootopia
+            </h2>
+            <h3
+              className="release_date"
+            >
+              2016
+            </h3>
+            <h3
+              style={
+                Object {
+                  "color": "#979797",
+                }
+              }
+            >
+              Animation
+            </h3>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="centered"
+    >
+      <div
+        className="film"
+      >
+        <svg
+          className="context"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 1024 1024"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M690 405h-46.9c-10.2 0-19.9 4.9-25.9 13.2L512 563.6 406.8 418.2c-6-8.3-15.6-13.2-25.9-13.2H334c-6.5 0-10.3 7.4-6.5 12.7l178 246c3.2 4.4 9.7 4.4 12.9 0l178-246c3.9-5.3.1-12.7-6.4-12.7z"
+          />
+          <path
+            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+          />
+        </svg>
+        <div
+          className="filmContainer"
+        >
+          <img
+            alt="Failed to find Poster Path"
+            className="listImage"
+            onClick={[Function]}
+            onError={[Function]}
+            src="https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+          />
+          <div
+            className="--details"
+          >
+            <h2>
+              Star Wars: The Last Jedi
+            </h2>
+            <h3
+              className="release_date"
+            >
+              2017
+            </h3>
+            <h3
+              style={
+                Object {
+                  "color": "#979797",
+                }
+              }
+            >
+              Fantasy
+            </h3>
+          </div>
+        </div>
+      </div>
+    </li>
+  </div>
+</ul>
+`;

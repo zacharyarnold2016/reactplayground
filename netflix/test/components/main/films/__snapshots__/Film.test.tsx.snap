@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film renders 1`] = `
+<div
+  className="filmContainer"
+>
+  <img
+    alt="Failed to find Poster Path"
+    className="listImage"
+    onClick={[Function]}
+    onError={[Function]}
+    src="url"
+  />
+  <div
+    className="--details"
+  >
+    <h2>
+      test
+    </h2>
+    <h3
+      className="release_date"
+    >
+      testDate
+    </h3>
+    <h3
+      style={
+        Object {
+          "color": "#979797",
+        }
+      }
+    >
+      test
+    </h3>
+  </div>
+</div>
+`;

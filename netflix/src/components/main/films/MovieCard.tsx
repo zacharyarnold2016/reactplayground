@@ -1,7 +1,6 @@
 import React from "react";
 import ContextMenu from "./ContextMenu";
 import Film from "./Film";
-import { film } from "../../../interfaces/Film.interface";
 import { convertRuntime } from "../../../helpers/convertRuntime";
 
 const MovieCard = (props: any) => {

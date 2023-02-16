@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortByOption Snapshot 1`] = `
+<h5
+  onClick={[Function]}
+  style={
+    Object {
+      "padding": "1px",
+    }
+  }
+>
+  test
+</h5>
+`;

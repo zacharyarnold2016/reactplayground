@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/films/forms";
 import generateUrl from "../../helpers/generateUrlString";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { BsCheckLg } from "react-icons/bs";
 
 const TopBar = () => {
   const dispatch = useDispatch();
@@ -24,6 +23,7 @@ const TopBar = () => {
         searchQuery: searchString,
       };
       const url = generateUrl(newSearchState);
+      console.log("Here");
       navigate(url);
     },
     [navigate]
