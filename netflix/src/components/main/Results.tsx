@@ -1,11 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useLoaderData } from "react-router";
 
 const Result = (props: any) => {
-  const results = useSelector((state: any) => state.film.results);
+  const { totalAmount }: any = useLoaderData();
+  const results = totalAmount;
+
   return (
     <div className="searchResults">
-      <h2> {results} Results</h2>
+      <h2> {results} movie found</h2>
     </div>
   );
 };

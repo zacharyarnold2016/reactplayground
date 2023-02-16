@@ -3,16 +3,16 @@ import { AiOutlineDownCircle } from "react-icons/ai";
 import Dropdown from "./Dropdown";
 
 const ContextMenu = (props: { id: number }) => {
-  const [drop, setDrop] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   const handleDrop = useCallback(() => {
-    setDrop(!drop);
-  }, [drop]);
+    setDropdown(!dropdown);
+  }, [dropdown]);
 
   return (
     <>
       <AiOutlineDownCircle className="context" onClick={handleDrop} />
-      {drop && <Dropdown id={props.id} />}
+      {dropdown && <Dropdown id={props.id} />}
     </>
   );
 };

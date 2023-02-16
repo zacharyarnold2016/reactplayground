@@ -1,12 +1,12 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { details } from "../../interfaces/details/Details.interface";
-import { closeDetails } from "../../redux/films/details";
 import { imgFallback } from "../../helpers/imgFallback";
+import { useSearchParams } from "react-router-dom";
 
-const Details = ({ details }: details) => {
-  const dispatch = useDispatch();
+const Details = ({ details, callback }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_searchParams, setSearchParams] = useSearchParams();
+  const setDetails = callback;
 
   return (
     <div className="details">
@@ -22,14 +22,17 @@ const Details = ({ details }: details) => {
           <h5>{details.genres[0]}</h5>
         </div>
         <div className="detailsSubtext">
-          <h2>{details.release_date}</h2>
-          <h2>{details.runtime}</h2>
+          <h4>{details.release_date}</h4>
+          <h4>{details.runtime}</h4>
         </div>
         <br />
         <h3 className="description">{details.overview}</h3>
       </div>
       <BsSearch
-        onClick={() => dispatch(closeDetails())}
+        onClick={() => {
+          setDetails(undefined);
+          setSearchParams();
+        }}
         className="switchDetails"
       />
     </div>

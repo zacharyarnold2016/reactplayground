@@ -25,7 +25,6 @@ const MovieForm = (props: any) => {
     runtime: "",
     overview: "",
   };
-  console.log(props.type);
   const update = useCallback(
     async (
       {
@@ -40,7 +39,7 @@ const MovieForm = (props: any) => {
       actions: any
     ) => {
       const genreArray: string[] = genres.split(" ");
-      const runtimeNum = parseInt(runtime);
+      const runtimeAsNumber: number = parseInt(runtime);
       const voteNum = parseInt(vote_average);
       const film = {
         title,
@@ -48,7 +47,7 @@ const MovieForm = (props: any) => {
         poster_path,
         vote_average: voteNum,
         genres: genreArray,
-        runtime: runtimeNum,
+        runtime: runtimeAsNumber,
         overview,
         id,
       };
