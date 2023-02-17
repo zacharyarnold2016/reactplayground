@@ -1,11 +1,11 @@
 const generateQueryString = ({ searchQuery, genre, sortBy }: any) => {
+  console.log(searchQuery, genre, sortBy);
   const queryParams = new URLSearchParams();
   queryParams.append("searchBy", "title");
-  if (searchQuery === "f08ab2") {
-    queryParams.append("search", "");
-  } else if (searchQuery) {
-    queryParams.append("search", searchQuery);
-  }
+
+  searchQuery
+    ? queryParams.append("search", searchQuery)
+    : queryParams.append("search", "");
 
   if (genre && genre !== "All") {
     queryParams.append("filter", genre);
@@ -14,6 +14,7 @@ const generateQueryString = ({ searchQuery, genre, sortBy }: any) => {
   sortBy && queryParams.append("sortOrder", "desc");
 
   const queryString = `http://localhost:4000/movies?${queryParams.toString()}`;
+  console.log(queryString);
   return queryString;
 };
 

@@ -1,12 +1,14 @@
 import React from "react";
 import { sortString } from "../../../helpers/sortHelperMethods";
-import { useNavigate, useParams } from "react-router";
+import { useSearchState } from "../../../hooks/useSearchState";
+import { useRouter } from "next/router";
 import generateUrl from "../../../helpers/generateUrlString";
 
 const SortByOption = ({ option }: any) => {
-  const searchState = useParams();
+  const searchState = useSearchState();
   const finalstring: string = sortString(option);
-  const navigate = useNavigate();
+  const router = useRouter();
+  const navigate = router.push;
 
   const sortAll = async () => {
     const { genre, searchQuery } = searchState;

@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
-import { useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import { SORTOPTIONS } from "../../../interfaces/enums/lists.enums";
 import SortByOption from "./SortByOption";
 
 const SortBy = () => {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { sortBy } = router.query;
 
   const options = Object.values(SORTOPTIONS);
 
@@ -18,7 +19,7 @@ const SortBy = () => {
       <h1 style={{ color: "#555555", paddingRight: "5px" }}>Sort By: </h1>
       <div style={{ display: "inline-flex" }}>
         <h1 onClick={handleOpen}>
-          {searchParams.get("sortBy")} <AiFillCaretDown className="caret" />
+          {sortBy} <AiFillCaretDown className="caret" />
         </h1>
 
         {open && (

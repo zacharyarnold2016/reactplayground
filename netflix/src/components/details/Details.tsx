@@ -1,11 +1,10 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { imgFallback } from "../../helpers/imgFallback";
-import { useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 
 const Details = ({ details, callback }: any) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_searchParams, setSearchParams] = useSearchParams();
+  const router = useRouter();
   const setDetails = callback;
 
   return (
@@ -31,7 +30,7 @@ const Details = ({ details, callback }: any) => {
       <BsSearch
         onClick={() => {
           setDetails(undefined);
-          setSearchParams();
+          router.back();
         }}
         className="switchDetails"
       />

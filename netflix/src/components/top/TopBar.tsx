@@ -4,29 +4,28 @@ import { ButtonType } from "../../interfaces/components/util/Button.interface";
 import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/films/forms";
 import generateUrl from "../../helpers/generateUrlString";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useSearchState } from "../../hooks/useSearchState";
+import { useRouter } from "next/router";
 
 const TopBar = () => {
+  const urlParams = useSearchState();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const searchState = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const router = useRouter();
 
   const handleSearch = useCallback(
     async (event: any) => {
       event.preventDefault();
       const searchString = event.target[0].value;
-      const { genre, sortBy } = searchState;
+      const { genre, sortBy } = urlParams;
       const newSearchState = {
         genre,
         sortBy,
         searchQuery: searchString,
       };
       const url = generateUrl(newSearchState);
-      console.log("Here");
-      navigate(url);
+      await router.push(url);
     },
-    [navigate]
+    [router, urlParams]
   );
 
   return (
