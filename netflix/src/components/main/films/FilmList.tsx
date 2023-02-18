@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import MovieCard from "./MovieCard";
 import { setFilms } from "../../../redux/films/films";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoaderData } from "react-router";
 
 const FilmList = (props: any) => {
   const dispatch = useDispatch();

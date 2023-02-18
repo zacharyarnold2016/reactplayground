@@ -12,8 +12,7 @@ import { fetchDetails } from "../helpers/fetchDetails";
 import { useSearchState } from "../hooks/useSearchState";
 
 const App = (props: any) => {
-  const urlParams = useSearchState();
-  const { movieId } = urlParams;
+  const { movieId } = useSearchState();
   const { form } = useSelector((state: any) => state.forms);
   const [details, setDetails] = useState(props.films.details);
 

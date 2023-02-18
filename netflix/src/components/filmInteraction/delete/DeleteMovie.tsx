@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Button from "../../util/Button";
 import { ButtonType } from "../../../interfaces/components/util/Button.interface";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,18 +10,22 @@ const DeleteMovie = () => {
   const dispatch = useDispatch();
   const { id } = useSelector((state: any) => state.forms);
   const [deleteMutation] = useDeleteMovieMutation();
-  const refresh = () => {
-    window.location.reload();
-  };
-  const deleteMovie = async () => {
-    console.log(id);
-    await deleteMutation(id);
-    dispatch(closeForms());
-    dispatch(resetId());
-    refresh();
-  };
 
-  console.log(id);
+  const deleteMovie = useCallback(() => {
+    const refresh = () => {
+      window.location.reload();
+    };
+    const deleteMovie = async () => {
+      console.log(id);
+      await deleteMutation(id);
+      dispatch(closeForms());
+      dispatch(resetId());
+      refresh();
+    };
+
+    deleteMovie();
+  }, [deleteMutation, dispatch, id]);
+  
   return (
     <div className="delete">
       <h1>Delete Movie?</h1>

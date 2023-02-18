@@ -1,11 +1,10 @@
 import React, { useCallback } from "react";
 import { useRouter } from "next/router";
-import generateUrl from "../../../helpers/generateUrlString";
+import { usePageState } from "../../../hooks/usePageState";
 
 const GenreOption = (props: any) => {
+  const handlePage = usePageState();
   const router = useRouter();
-  const navigate = router.push;
-  const { sortBy, searchQuery } = router.query;
   const activeGenre = router.query.genre;
   const genre = props.genre.toString();
 
@@ -17,15 +16,10 @@ const GenreOption = (props: any) => {
 
   const sortGenre = useCallback(async () => {
     if (genre !== activeGenre) {
-      const newSearchState = {
-        sortBy,
-        searchQuery,
-        genre,
-      };
-      const url = generateUrl(newSearchState);
-      navigate(url);
+      handlePage(genre, "genre");
     }
-  }, [genre, navigate, activeGenre, searchQuery, sortBy]);
+  }, [genre, activeGenre, handlePage]);
+
   return (
     <h4 className={isSelect()} onClick={sortGenre}>
       {genre}
