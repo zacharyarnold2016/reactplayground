@@ -1,5 +1,4 @@
 const generateQueryString = ({ searchQuery, genre, sortBy }: any) => {
-  console.log(searchQuery, genre, sortBy);
   const queryParams = new URLSearchParams();
   queryParams.append("searchBy", "title");
 
@@ -14,7 +13,6 @@ const generateQueryString = ({ searchQuery, genre, sortBy }: any) => {
   sortBy && queryParams.append("sortOrder", "desc");
 
   const queryString = `http://localhost:4000/movies?${queryParams.toString()}`;
-  console.log(queryString);
   return queryString;
 };
 

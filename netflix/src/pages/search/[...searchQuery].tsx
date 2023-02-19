@@ -5,7 +5,6 @@ import App from "../../components/App";
 import generateQueryString from "../../helpers/generateQueryString";
 
 const Index = (props: any) => {
-  console.log(props);
   return (
     <React.StrictMode>
       <Provider store={store}>

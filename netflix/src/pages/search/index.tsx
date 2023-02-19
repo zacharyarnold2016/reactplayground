@@ -23,7 +23,6 @@ export async function getServerSideProps(context: any) {
     : (res = await fetch("http://localhost:4000/movies"));
   const { data, totalAmount } = await res.json();
   if (context.query.movieId) {
-    console.log(context.query.movieId);
     details = await fetch(
       `http://localhost:4000/movies/${context.query.movieId}`
     );
