@@ -8,6 +8,8 @@ const SortBy = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const { sortBy } = router.query;
+  // @ts-ignore
+  const currentSortBy = sortBy?.split("_").join(" ");
 
   const options = Object.values(SORTOPTIONS);
 
@@ -16,10 +18,10 @@ const SortBy = () => {
   }, [open]);
   return (
     <div className="sortBy">
-      <h1 style={{ color: "#555555", paddingRight: "5px" }}>Sort By: </h1>
+      <h1 style={{ color: "#555555", paddingRight: "5px" }}>Sort By:  </h1>
       <div style={{ display: "inline-flex" }}>
         <h1 onClick={handleOpen}>
-          {sortBy} <AiFillCaretDown className="caret" />
+          {currentSortBy} <AiFillCaretDown className="caret" />
         </h1>
 
         {open && (

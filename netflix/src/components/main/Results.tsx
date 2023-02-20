@@ -1,6 +1,6 @@
 import React from "react";
 
-const Result = ({ results }: any) => {
+const Result = ({ results }: { results: number }) => {
   return (
     <div className="searchResults">
       <h2> {results} movie found</h2>

@@ -1,12 +1,16 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import generateUrl from "../helpers/generateUrlString";
+import { pageObject } from "../interfaces/pageObject.interface";
+
+type updateValue = string | undefined;
+type updateTarget = string | undefined;
 
 export const usePageState = () => {
   const router = useRouter();
   return useCallback(
-    async (updateValue: any | undefined, updateTarget: any | undefined) => {
-      let newSearchState;
+    async (updateValue: updateValue, updateTarget: updateTarget) => {
+      let newSearchState: pageObject | undefined;
       const navigate = router.push;
 
       switch (updateTarget) {
