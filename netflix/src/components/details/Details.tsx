@@ -2,8 +2,10 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { imgFallback } from "../../helpers/imgFallback";
 import { useRouter } from "next/router";
+import { usePageState } from "../../hooks/usePageState";
 
 const Details = ({ details, callback }: any) => {
+  const handlePage = usePageState();
   const router = useRouter();
   const setDetails = callback;
 
@@ -30,7 +32,7 @@ const Details = ({ details, callback }: any) => {
       <BsSearch
         onClick={() => {
           setDetails(undefined);
-          router.back();
+          handlePage();
         }}
         className="switchDetails"
       />

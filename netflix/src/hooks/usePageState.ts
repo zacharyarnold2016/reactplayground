@@ -5,7 +5,7 @@ import generateUrl from "../helpers/generateUrlString";
 export const usePageState = () => {
   const router = useRouter();
   return useCallback(
-    async (updateValue: any, updateTarget: any) => {
+    async (updateValue: any | undefined, updateTarget: any | undefined) => {
       let newSearchState;
       const navigate = router.push;
 
@@ -44,6 +44,14 @@ export const usePageState = () => {
             searchQuery,
             sortBy: updateValue,
           };
+          const url = generateUrl(newSearchState);
+          await navigate(url);
+          break;
+        }
+
+        case undefined: {
+          const { searchQuery, genre, sortBy } = router.query;
+          const newSearchState = { searchQuery, genre, sortBy };
           const url = generateUrl(newSearchState);
           await navigate(url);
           break;
