@@ -12,7 +12,9 @@
     "@types/react-icons": "^3.0.0",
     "axios": "^1.2.1",
     "babel-jest": "^29.4.1",
+    "express": "^4.18.2",
     "formik": "^2.2.9",
+    "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
@@ -28,15 +30,28 @@
   "scripts": {
     "build:css": "node-sass src/ -o src/ ",
     "start-css": "npm run build:css && node-sass src/ -o src/ -w -r",
-    "start": "npm run build:css && react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run build:css && next start",
+    "build": "next build",
+    "dev": "next dev",
     "test": "jest test --watchAll --verbose --coverage --collectCoverageFrom=./src/**/*",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -52,6 +67,16 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/node-sass": "^4.11.3",
@@ -60,6 +85,8 @@
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
+    "autoprefixer": "^10.4.13",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "cypress": "^12.5.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
@@ -70,8 +97,10 @@
     "jest": "^27.5.1",
     "node-sass": "^7.0.3",
     "npm-run-all": "^4.1.5",
+    "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.57.0",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0"
   }
 }

@@ -13,6 +13,7 @@ export interface film {
   revenue: number;
   runtime: number | string;
   genres: string[];
+  callback?: object;
 }
 
 export interface filmList extends React.FC {

@@ -8,8 +8,8 @@ const VideoBar = (props: any) => {
   return (
     <div className="mainContainer">
       <SortBar />
-      <Result />
-      <FilmList callback={props.callback} />
+      <Result results={props.films.totalAmount} />
+      <FilmList callback={props.callback} films={props.films} />
     </div>
   );
 };

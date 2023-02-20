@@ -14,8 +14,8 @@ import { movieFormSchema } from "../lib/validators";
 const MovieForm = (props: any) => {
   const [addMovie] = useAddMovieMutation();
   const [editMovie] = useEditMovieMutation();
-  const dispatch = useDispatch();
   const { id } = useSelector((state: any) => state.forms);
+  const dispatch = useDispatch();
   const initialValues = {
     title: "",
     release_date: "",
@@ -63,7 +63,7 @@ const MovieForm = (props: any) => {
       }
       actions.setSubmitting(false);
     },
-    [id, props.type, addMovie, editMovie]
+    [id, props.type, addMovie, editMovie, dispatch]
   );
 
   return (

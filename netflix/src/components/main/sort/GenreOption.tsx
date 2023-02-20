@@ -1,33 +1,25 @@
 import React, { useCallback } from "react";
-import { useNavigate, useParams } from "react-router";
-import { useSearchParams } from "react-router-dom";
-import generateUrl from "../../../helpers/generateUrlString";
+import { useRouter } from "next/router";
+import { usePageState } from "../../../hooks/usePageState";
 
 const GenreOption = (props: any) => {
-  const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchState = useParams();
+  const handlePage = usePageState();
+  const router = useRouter();
+  const activeGenre = router.query.genre;
   const genre = props.genre.toString();
 
   const isSelect = useCallback(() => {
-    if (props.genre === searchParams.get("genre")) {
+    if (props.genre === activeGenre) {
       return "highlighted";
     }
-  }, [searchParams.get("genre"), props.genre]);
+  }, [activeGenre, props.genre]);
 
   const sortGenre = useCallback(async () => {
-    if (genre !== searchParams.get("genre")) {
-      const { searchQuery } = searchState;
-      const sortBy = searchParams.get("sortBy");
-      const newSearchState = {
-        sortBy,
-        searchQuery,
-        genre,
-      };
-      const url = generateUrl(newSearchState);
-      navigate(url);
+    if (genre !== activeGenre) {
+      handlePage(genre, "genre");
     }
-  }, [genre, navigate, searchParams]);
+  }, [genre, activeGenre, handlePage]);
+
   return (
     <h4 className={isSelect()} onClick={sortGenre}>
       {genre}

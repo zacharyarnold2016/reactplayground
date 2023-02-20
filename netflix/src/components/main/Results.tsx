@@ -1,10 +1,6 @@
 import React from "react";
-import { useLoaderData } from "react-router";
 
-const Result = (props: any) => {
-  const { totalAmount }: any = useLoaderData();
-  const results = totalAmount;
-
+const Result = ({ results }: { results: number }) => {
   return (
     <div className="searchResults">
       <h2> {results} movie found</h2>

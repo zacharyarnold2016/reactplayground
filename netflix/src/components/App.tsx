@@ -8,15 +8,13 @@ import DeleteMovie from "./filmInteraction/delete/DeleteMovie";
 import AddMovie from "./filmInteraction/add/AddMovie";
 import Details from "./details/Details";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
 import { fetchDetails } from "../helpers/fetchDetails";
+import { useSearchState } from "../hooks/useSearchState";
 
-const App: React.FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [searchParams, _setSearchParams] = useSearchParams();
+const App = (props: any) => {
+  const { movieId } = useSearchState();
   const { form } = useSelector((state: any) => state.forms);
-  const movieId = searchParams.get("movieId");
-  const [details, setDetails] = useState(undefined);
+  const [details, setDetails] = useState(props.films.details);
 
   const fetch = useCallback(
     () => fetchDetails({ movieId, setDetails }),
@@ -36,7 +34,7 @@ const App: React.FC = () => {
           ) : (
             <TopBar />
           )}
-          <VideoBar callback={setDetails} />
+          <VideoBar callback={setDetails} films={props.films} />
         </div>
         {form === "add" && <AddMovie />}
         {form === "edit" && <EditMovie />}

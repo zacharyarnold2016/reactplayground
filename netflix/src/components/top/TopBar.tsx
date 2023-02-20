@@ -3,30 +3,19 @@ import Button from "../util/Button";
 import { ButtonType } from "../../interfaces/components/util/Button.interface";
 import { useDispatch } from "react-redux";
 import { renderAdd } from "../../redux/films/forms";
-import generateUrl from "../../helpers/generateUrlString";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { usePageState } from "../../hooks/usePageState";
 
 const TopBar = () => {
+  const handlePage = usePageState();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const searchState = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSearch = useCallback(
     async (event: any) => {
       event.preventDefault();
       const searchString = event.target[0].value;
-      const { genre, sortBy } = searchState;
-      const newSearchState = {
-        genre,
-        sortBy,
-        searchQuery: searchString,
-      };
-      const url = generateUrl(newSearchState);
-      console.log("Here");
-      navigate(url);
+      await handlePage(searchString, "search");
     },
-    [navigate]
+    [handlePage]
   );
 
   return (
@@ -38,7 +27,6 @@ const TopBar = () => {
           name="Search"
           placeholder="Search"
         />
-        {/* Make into a Button, remove submit option. requests will be handled through redux !routing */}
         <Button styling="--submit" purpose={ButtonType.SUBMIT} text="Submit" />
       </form>
       <Button

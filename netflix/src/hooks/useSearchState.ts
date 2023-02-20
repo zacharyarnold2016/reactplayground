@@ -1,7 +1,7 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import { useRouter } from "next/router";
 
 export const useSearchState = () => {
-  const params = useParams();
-  return params;
+  const router = useRouter();
+  const { genre, searchQuery, sortBy, movieId } = router.query;
+  return { genre, searchQuery, sortBy, movieId };
 };
